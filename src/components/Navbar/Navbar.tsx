@@ -1,4 +1,14 @@
-import React from "react";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+} from "@/components/ui/navigation-menu";
+
 import Container from "../Responsive/Container";
 import { Button } from "../ui/button";
 import { ModeToggle } from "../ui/ModeToggle";
@@ -11,10 +21,22 @@ const Navbar = () => {
           <div className="flex-1">
             <h2>Koda</h2>
           </div>
-          <div className="flex-2"></div>
-          <div className="flex-1 flex items-center space-x-3">
+          <div className="flex-2">
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>Item One</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <NavigationMenuLink>Link</NavigationMenuLink>
+                    <ul className="w-100">Hello</ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+          </div>
+          <div className="flex-1 flex items-center space-x-3 justify-end">
             <ModeToggle />
-            <Button>Login</Button>
+            <Button variant={"outline"}>Login</Button>
             <Button>Signup</Button>
           </div>
         </div>

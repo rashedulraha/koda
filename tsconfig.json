@@ -28,7 +28,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts"
+    "**/*.mts",
+    "src/components/Navbar/Navigation/npm dlx shadcn@latest add navigation-menu"
   ],
   "exclude": ["node_modules"]
 }

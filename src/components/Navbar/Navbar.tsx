@@ -12,6 +12,18 @@ import {
 import Container from "../Responsive/Container";
 import { Button } from "../ui/button";
 import { ModeToggle } from "../ui/ModeToggle";
+import Link from "next/link";
+
+const desktopMobileMenuLink = (
+  <>
+    <div className="text-sm font-medium flex items-center gap-5 capitalize">
+      <Link href={"/pricing"}>pricing</Link>
+      <Link href={"/customers"}>Customer</Link>
+      <Link href={"/new"}>New</Link>
+      <Link href={"/contact"}>Contact</Link>
+    </div>
+  </>
+);
 
 const Navbar = () => {
   return (
@@ -21,7 +33,7 @@ const Navbar = () => {
           <div className="flex-1">
             <h2>Koda</h2>
           </div>
-          <div className="flex-2">
+          <div className="flex-2 flex items-center justify-center text-muted-foreground  gap-5">
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
@@ -49,6 +61,8 @@ const Navbar = () => {
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
+
+            {desktopMobileMenuLink}
           </div>
           <div className="flex-1 flex items-center space-x-3 justify-end">
             <ModeToggle />

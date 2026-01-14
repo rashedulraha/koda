@@ -5,21 +5,19 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import Link from "next/link";
-import NavLink from "../../_NavLink/NavLink";
+import { NavLink } from "../../_NavLink/NavLink";
 
 const RecourseNavLink = () => {
   return (
     <div>
-      {" "}
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
             <NavigationMenuTrigger>Recurse</NavigationMenuTrigger>
             <NavigationMenuContent className="bg-background">
-              <div className="flex items-start  md:w-120 lg:w-150 lg:grid-cols-[.75fr_1fr] bg-card rounded">
+              <div className="flex items-start  md:w-120 lg:w-150 lg:grid-cols-[.75fr_1fr] bg-card rounded border border-muted">
                 {/* Recurse first container */}
-                <div className="flex-1 p-4">
+                <div className="flex-1 p-4 w-full">
                   <h2 className="text-sm font-medium text-muted-foreground p-3">
                     Company
                   </h2>
@@ -52,7 +50,7 @@ const RecourseNavLink = () => {
                         data={{
                           to: "/developer",
                           title: "Developer",
-                          subTitle: "nBuild in the Koda api",
+                          subTitle: "Build in the Koda api",
                         }}
                       />
                       <NavLink
@@ -96,18 +94,6 @@ const RecourseNavLink = () => {
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="w-full py-3 px-2 flex items-center justify-between">
-                <div className="flex items-center">
-                  <h2 className="font-bold text-sm">New : Team owner</h2>
-                  <span className="text-muted-foreground text-sm font-medium  ml-2">
-                    permission for team level setting
-                  </span>
-                </div>
-
-                <span className="text-sm text-sidebar-primary  font-medium">
-                  Changelog
-                </span>
               </div>
             </NavigationMenuContent>
           </NavigationMenuItem>

@@ -3,20 +3,20 @@
 import Container from "../Responsive/Container";
 import { Button } from "../ui/button";
 import { ModeToggle } from "../ui/ModeToggle";
-import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 import RecourseNavLink from "./_Shared/RecourseNavLink/RecourseNavLink";
 import ProductNavLink from "./_Shared/ProductNavLink/ProductNavLink";
+import { MenuLink } from "./_NavLink/NavLink";
 
 const desktopMobileMenuLink = (
   <>
-    <div className="text-sm font-medium flex flex-col md:flex-row  items-start gap-5 capitalize">
-      <Link href={"/pricing"}>pricing</Link>
-      <Link href={"/customers"}>Customer</Link>
-      <Link href={"/new"}>New</Link>
-      <Link href={"/contact"}>Contact</Link>
+    <div className="text-sm font-medium flex flex-col md:flex-row  items-center gap-1 capitalize">
+      <MenuLink data={{ to: "/pricing", label: "Pricing" }} />
+      <MenuLink data={{ to: "/customer", label: "Customers" }} />
+      <MenuLink data={{ to: "/new", label: "New" }} />
+      <MenuLink data={{ to: "/contact", label: "Contact" }} />
     </div>
   </>
 );

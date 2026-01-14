@@ -5,7 +5,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import NavLink from "../../_NavLink/NavLink";
+import { NavLink } from "../../_NavLink/NavLink";
 
 const ProductNavLink = () => {
   return (
@@ -15,7 +15,7 @@ const ProductNavLink = () => {
           <NavigationMenuItem>
             <NavigationMenuTrigger>Product</NavigationMenuTrigger>
             <NavigationMenuContent className="bg-background">
-              <div className="flex items-start  md:w-150 lg:w-180 lg:grid-cols-[.75fr_1fr] bg-card rounded">
+              <div className="flex items-start  md:w-150 lg:w-180 lg:grid-cols-[.75fr_1fr] bg-card rounded border border-muted">
                 {/* products first container */}
                 <div className="flex-1 p-4">
                   <h2 className="text-sm font-medium text-muted-foreground p-3">

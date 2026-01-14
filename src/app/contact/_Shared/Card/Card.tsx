@@ -7,6 +7,8 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { ContactCard } from "../../_Types/Types";
+import Link from "next/link";
+import { ChevronRight } from "lucide-react";
 
 const CardComponent = ({ data }: ContactCard) => {
   return (
@@ -21,7 +23,10 @@ const CardComponent = ({ data }: ContactCard) => {
           </CardDescription>
         </CardHeader>
         <CardFooter>
-          <Button>{data.button}</Button>
+          <Button variant={"outline"}>
+            <Link href={"/talk-to-sales"}>{data.button}</Link>
+            <ChevronRight />
+          </Button>
         </CardFooter>
       </Card>
     </div>

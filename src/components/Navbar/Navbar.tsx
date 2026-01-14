@@ -49,16 +49,17 @@ const Navbar = () => {
                   <NavigationMenuItem>
                     <NavigationMenuTrigger>Product</NavigationMenuTrigger>
                     <NavigationMenuContent className="bg-background">
-                      <div className="flex items-center  md:w-120 lg:w-150 lg:grid-cols-[.75fr_1fr] bg-card rounded">
-                        <div className=" flex-1 p-4">
-                          <h2 className="text-sm font-medium text-muted-foreground">
+                      <div className="flex items-start  md:w-150 lg:w-180 lg:grid-cols-[.75fr_1fr] bg-card rounded">
+                        {/* products first container */}
+                        <div className="flex-1 p-4">
+                          <h2 className="text-sm font-medium text-muted-foreground p-3">
                             Core features
                           </h2>
-                          <div className="mt-5 flex items-center  flex-col">
+                          <div className="mt-5 flex items-center flex-col">
                             <Link
                               href={"/plan"}
                               className="hover:bg-background/30 p-3 rounded ">
-                              <h2 className="text-sm font-medium">Plan</h2>
+                              <h2 className="text-sm font-medium ">Plan</h2>
                               <p className="text-sm text-muted-foreground ">
                                 Set the product direction with project and
                                 initiates
@@ -75,10 +76,45 @@ const Navbar = () => {
                             </Link>
                           </div>
                         </div>
-                        <div className="flex-2  p-4 border-l border-muted">
-                          <h2 className="text-sm">More</h2>
-                          <div className="flex items-center ">
-                            <div className="mt-5 flex items-center  flex-col">
+                        {/* products second container */}
+                        <div className="flex-2  border-l border-muted">
+                          <h2 className="text-sm p-3">More</h2>
+                          <div className="flex justify-start w-full">
+                            {/* more first  container */}
+                            <div className="mt-5 flex items-center  flex-col flex-1">
+                              <Link
+                                href={"/plan"}
+                                className="hover:bg-background/30 p-3 rounded ">
+                                <h2 className="text-sm font-medium">
+                                  Customer requests
+                                </h2>
+                                <p className="text-sm text-muted-foreground ">
+                                  Manage user feedback
+                                </p>
+                              </Link>
+                              <Link
+                                href={"/build"}
+                                className="hover:bg-background/30 p-3 rounded ">
+                                <h2 className="text-sm font-medium">
+                                  Insights
+                                </h2>
+                                <p className="text-sm text-muted-foreground ">
+                                  Real time analytics
+                                </p>
+                              </Link>
+                              <Link
+                                href={"/build"}
+                                className="hover:bg-background/30 p-3 rounded ">
+                                <h2 className="text-sm font-medium">
+                                  Koda ask
+                                </h2>
+                                <p className="text-sm text-muted-foreground ">
+                                  work place request
+                                </p>
+                              </Link>
+                            </div>
+                            {/* more second  container */}
+                            <div className="mt-5 flex items-center  flex-col flex-1">
                               <Link
                                 href={"/plan"}
                                 className="hover:bg-background/30 p-3 rounded ">
@@ -95,17 +131,6 @@ const Navbar = () => {
                                 <p className="text-sm text-muted-foreground ">
                                   Make progress and issue tracking and cycle
                                   planing
-                                </p>
-                              </Link>
-                            </div>
-                            <div className="mt-5 flex items-center  flex-col">
-                              <Link
-                                href={"/plan"}
-                                className="hover:bg-background/30 p-3 rounded ">
-                                <h2 className="text-sm font-medium">Plan</h2>
-                                <p className="text-sm text-muted-foreground ">
-                                  Set the product direction with project and
-                                  initiates
                                 </p>
                               </Link>
                               <Link

@@ -5,7 +5,6 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import Link from "next/link";
 import NavLink from "../../_NavLink/NavLink";
 
 const ProductNavLink = () => {
@@ -22,7 +21,7 @@ const ProductNavLink = () => {
                   <h2 className="text-sm font-medium text-muted-foreground p-3">
                     Core features
                   </h2>
-                  <div className="flex gap-3 flex-col">
+                  <div className="flex flex-col">
                     {/* plan menu link */}
                     <NavLink
                       data={{
@@ -51,61 +50,51 @@ const ProductNavLink = () => {
                   <div className="flex justify-start gap-5 w-full">
                     {/* more first  container */}
                     <div className="flex flex-col flex-1">
-                      <Link
-                        href={"/plan"}
-                        className="hover:bg-background/30 p-3 rounded ">
-                        <h2 className="text-sm font-medium">
-                          Customer requests
-                        </h2>
-                        <p className="text-sm text-muted-foreground ">
-                          Manage user feedback
-                        </p>
-                      </Link>
-                      <Link
-                        href={"/build"}
-                        className="hover:bg-background/30 p-3 rounded ">
-                        <h2 className="text-sm font-medium">Insights</h2>
-                        <p className="text-sm text-muted-foreground ">
-                          Real time analytics
-                        </p>
-                      </Link>
-                      <Link
-                        href={"/build"}
-                        className="hover:bg-background/30 p-3 rounded ">
-                        <h2 className="text-sm font-medium">Koda ask</h2>
-                        <p className="text-sm text-muted-foreground ">
-                          work place request
-                        </p>
-                      </Link>
+                      <NavLink
+                        data={{
+                          to: "/customer-request",
+                          title: "Customer requests",
+                          subTitle: "Manage user feedback",
+                        }}
+                      />
+                      <NavLink
+                        data={{
+                          to: "/insights",
+                          title: "Insights",
+                          subTitle: "Real time analytics",
+                        }}
+                      />
+                      <NavLink
+                        data={{
+                          to: "/koda-ask",
+                          title: "Koda ask",
+                          subTitle: "work place request",
+                        }}
+                      />
                     </div>
                     {/* more second  container */}
                     <div className=" flex flex-col flex-1">
-                      <Link
-                        href={"/plan"}
-                        className="hover:bg-background/30 p-3 rounded ">
-                        <h2 className="text-sm font-medium">Integration</h2>
-                        <p className="text-sm text-muted-foreground ">
-                          Collaborator across tools
-                        </p>
-                      </Link>
-                      <Link
-                        href={"/build"}
-                        className="hover:bg-background/30 p-3 rounded ">
-                        <h2 className="text-sm font-medium">Mobile app</h2>
-                        <p className="text-sm text-muted-foreground ">
-                          Koda in your pocket
-                        </p>
-                      </Link>
-                      <Link
-                        href={"/build"}
-                        className="hover:bg-background/30 p-3 rounded ">
-                        <h2 className="text-sm font-medium">
-                          Artificial Intelligence
-                        </h2>
-                        <p className="text-sm text-muted-foreground ">
-                          Ai powered workflows
-                        </p>
-                      </Link>
+                      <NavLink
+                        data={{
+                          to: "/integration",
+                          title: "Integration",
+                          subTitle: "  Collaborator across tools",
+                        }}
+                      />
+                      <NavLink
+                        data={{
+                          to: "/mobile-app",
+                          title: "Mobile app",
+                          subTitle: "Koda in your pocket",
+                        }}
+                      />
+                      <NavLink
+                        data={{
+                          to: "/artificial-intelligence",
+                          title: "Artificial Intelligence",
+                          subTitle: "Ai powered workflows",
+                        }}
+                      />
                     </div>
                   </div>
                 </div>

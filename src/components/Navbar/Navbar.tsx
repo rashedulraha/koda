@@ -49,18 +49,42 @@ const Navbar = () => {
                   <NavigationMenuItem>
                     <NavigationMenuTrigger>Product</NavigationMenuTrigger>
                     <NavigationMenuContent className="bg-background">
-                      <div className="grid grid-cols-2 gap-2 md:w-115 lg:w-125 lg:grid-cols-[.75fr_1fr] bg-card rounded p-2">
-                        <div className="bg-red-500">Hello</div>
-                        <div>Hello</div>
-                        <div>Hello</div>
-                        <div>Hello</div>
+                      <div className="flex items-center gap-5 md:w-120 lg:w-150 lg:grid-cols-[.75fr_1fr] bg-card rounded p-2">
+                        <div className=" flex-1 p-2">
+                          <h2 className="text-sm font-medium text-muted-foreground">
+                            Core features
+                          </h2>
+                          <div className="mt-5 flex items-center gap-3 flex-col">
+                            <Link
+                              href={"/plan"}
+                              className="hover:bg-background/30 p-3 rounded ">
+                              <h2 className="text-sm font-medium">Plan</h2>
+                              <p className="text-sm text-muted-foreground ">
+                                Set the product direction with project and
+                                initiates
+                              </p>
+                            </Link>
+                            <Link
+                              href={"/build"}
+                              className="hover:bg-background/30 p-3 rounded ">
+                              <h2 className="text-sm font-medium">Build</h2>
+                              <p className="text-sm text-muted-foreground ">
+                                Make progress and issue tracking and cycle
+                                planing
+                              </p>
+                            </Link>
+                          </div>
+                        </div>
+                        <div className=" flex-2">
+                          <h2 className="text-sm">More</h2>
+                        </div>
                       </div>
-                      <div className="w-full py-3 flex items-center justify-between">
+                      <div className="w-full py-3 px-2 flex items-center justify-between">
                         <div className="flex items-center">
                           <h2 className="font-bold text-sm">
                             New : Team owner
                           </h2>
-                          <span className="text-muted-foreground ml-2 ">
+                          <span className="text-muted-foreground text-sm font-medium  ml-2">
                             permission for team level setting
                           </span>
                         </div>

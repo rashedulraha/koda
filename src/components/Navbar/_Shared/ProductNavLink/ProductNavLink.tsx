@@ -6,6 +6,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
+import NavLink from "../../_NavLink/NavLink";
 
 const ProductNavLink = () => {
   return (
@@ -21,23 +22,25 @@ const ProductNavLink = () => {
                   <h2 className="text-sm font-medium text-muted-foreground p-3">
                     Core features
                   </h2>
-                  <div className=" flex items-center flex-col">
-                    <Link
-                      href={"/plan"}
-                      className="hover:bg-background/30 p-3 rounded ">
-                      <h2 className="text-sm font-medium ">Plan</h2>
-                      <p className="text-sm text-muted-foreground ">
-                        Set the product direction with project and initiates
-                      </p>
-                    </Link>
-                    <Link
-                      href={"/build"}
-                      className="hover:bg-background/30 p-3 rounded ">
-                      <h2 className="text-sm font-medium">Build</h2>
-                      <p className="text-sm text-muted-foreground ">
-                        Make progress and issue tracking and cycle planing
-                      </p>
-                    </Link>
+                  <div className="flex gap-3 flex-col">
+                    {/* plan menu link */}
+                    <NavLink
+                      data={{
+                        to: "/plan",
+                        title: "Plan",
+                        subTitle:
+                          "Set the product direction with project and initiates",
+                      }}
+                    />
+                    {/* build menu link */}
+                    <NavLink
+                      data={{
+                        to: "/build",
+                        title: "Build",
+                        subTitle:
+                          "Make progress and issue tracking and cycle planing",
+                      }}
+                    />
                   </div>
                 </div>
                 {/* products second container */}

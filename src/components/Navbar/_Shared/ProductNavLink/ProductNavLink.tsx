@@ -47,7 +47,7 @@ const ProductNavLink = () => {
                   <h2 className="text-sm p-3 text-muted-foreground font-medium">
                     More
                   </h2>
-                  <div className="flex justify-start gap-5 w-full">
+                  <div className="flex justify-start w-full">
                     {/* more first  container */}
                     <div className="flex flex-col flex-1">
                       <NavLink

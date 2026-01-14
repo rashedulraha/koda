@@ -5,7 +5,7 @@ interface props {
 }
 
 const Container = ({ children }: props) => {
-  return <div className="max-w-300 mx-auto px-4">{children}</div>;
+  return <div className="max-w-250 mx-auto px-4">{children}</div>;
 };
 
 export default Container;

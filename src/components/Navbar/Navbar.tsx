@@ -9,6 +9,7 @@ import { Menu, X } from "lucide-react";
 import RecourseNavLink from "./_Shared/RecourseNavLink/RecourseNavLink";
 import ProductNavLink from "./_Shared/ProductNavLink/ProductNavLink";
 import { MenuLink } from "./_NavLink/NavLink";
+import Link from "next/link";
 
 const desktopMobileMenuLink = (
   <>
@@ -33,7 +34,9 @@ const Navbar = () => {
         <Container>
           <div className="flex items-center justify-between">
             <div>
-              <h2 className="font-bold  text-2xl">Koda</h2>
+              <h2 className="font-bold  text-2xl">
+                <Link href="/">Koda</Link>
+              </h2>
             </div>
             <div className="flex-2  items-center justify-center text-muted-foreground gap-1 hidden md:flex">
               {/* menu bar products section */}

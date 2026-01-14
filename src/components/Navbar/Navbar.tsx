@@ -12,7 +12,7 @@ import { MenuLink } from "./_NavLink/NavLink";
 
 const desktopMobileMenuLink = (
   <>
-    <div className="text-sm font-medium flex flex-col md:flex-row  items-center gap-1 capitalize">
+    <div className="text-sm font-medium flex flex-col md:flex-row  items-center  capitalize gap-1 transition-all duration-700">
       <MenuLink data={{ to: "/pricing", label: "Pricing" }} />
       <MenuLink data={{ to: "/customer", label: "Customers" }} />
       <MenuLink data={{ to: "/new", label: "New" }} />
@@ -35,7 +35,7 @@ const Navbar = () => {
             <div>
               <h2 className="font-bold  text-2xl">Koda</h2>
             </div>
-            <div className="flex-2  items-center justify-center text-muted-foreground  gap-5 hidden md:flex">
+            <div className="flex-2  items-center justify-center text-muted-foreground gap-1 hidden md:flex">
               {/* menu bar products section */}
               <ProductNavLink />
 

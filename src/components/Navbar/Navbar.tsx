@@ -55,7 +55,7 @@ const Navbar = () => {
                           <h2 className="text-sm font-medium text-muted-foreground p-3">
                             Core features
                           </h2>
-                          <div className="mt-5 flex items-center flex-col">
+                          <div className=" flex items-center flex-col">
                             <Link
                               href={"/plan"}
                               className="hover:bg-background/30 p-3 rounded ">
@@ -77,11 +77,13 @@ const Navbar = () => {
                           </div>
                         </div>
                         {/* products second container */}
-                        <div className="flex-2  border-l border-muted">
-                          <h2 className="text-sm p-3">More</h2>
-                          <div className="flex justify-start w-full">
+                        <div className="flex-2  p-4 border-l border-muted">
+                          <h2 className="text-sm p-3 text-muted-foreground font-medium">
+                            More
+                          </h2>
+                          <div className="flex justify-start gap-5 w-full">
                             {/* more first  container */}
-                            <div className="mt-5 flex items-center  flex-col flex-1">
+                            <div className="flex flex-col flex-1">
                               <Link
                                 href={"/plan"}
                                 className="hover:bg-background/30 p-3 rounded ">
@@ -114,32 +116,35 @@ const Navbar = () => {
                               </Link>
                             </div>
                             {/* more second  container */}
-                            <div className="mt-5 flex items-center  flex-col flex-1">
+                            <div className=" flex flex-col flex-1">
                               <Link
                                 href={"/plan"}
                                 className="hover:bg-background/30 p-3 rounded ">
-                                <h2 className="text-sm font-medium">Plan</h2>
+                                <h2 className="text-sm font-medium">
+                                  Integration
+                                </h2>
                                 <p className="text-sm text-muted-foreground ">
-                                  Set the product direction with project and
-                                  initiates
+                                  Collaborator across tools
                                 </p>
                               </Link>
                               <Link
                                 href={"/build"}
                                 className="hover:bg-background/30 p-3 rounded ">
-                                <h2 className="text-sm font-medium">Build</h2>
+                                <h2 className="text-sm font-medium">
+                                  Mobile app
+                                </h2>
                                 <p className="text-sm text-muted-foreground ">
-                                  Make progress and issue tracking and cycle
-                                  planing
+                                  Koda in your pocket
                                 </p>
                               </Link>
                               <Link
                                 href={"/build"}
                                 className="hover:bg-background/30 p-3 rounded ">
-                                <h2 className="text-sm font-medium">Build</h2>
+                                <h2 className="text-sm font-medium">
+                                  Artificial Intelligence
+                                </h2>
                                 <p className="text-sm text-muted-foreground ">
-                                  Make progress and issue tracking and cycle
-                                  planing
+                                  Ai powered workflows
                                 </p>
                               </Link>
                             </div>

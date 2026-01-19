@@ -49,7 +49,9 @@ const Navbar = () => {
             </div>
             <div className="flex items-center space-x-3 justify-end">
               <ModeToggle />
-              <Button>Signup</Button>
+              <Link href={"/signin"}>
+                <Button>Signin</Button>
+              </Link>
               <div onClick={handleOpenMenu} className="md:hidden">
                 {open ? <X /> : <Menu />}
               </div>

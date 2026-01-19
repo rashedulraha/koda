@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Link from "next/link";
 
 export function SignUpForm() {
   return (
@@ -22,7 +23,9 @@ export function SignUpForm() {
           Enter your email below to login to your account
         </CardDescription>
         <CardAction>
-          <Button variant="link">Sign In</Button>
+          <Link href={"/signin"}>
+            <Button variant="link">Sign In</Button>
+          </Link>
         </CardAction>
       </CardHeader>
       <CardContent>
@@ -53,7 +56,7 @@ export function SignUpForm() {
       </CardContent>
       <CardFooter className="flex-col gap-2">
         <Button type="submit" className="w-full">
-          Login
+          Signup
         </Button>
         <Button variant="outline" className="w-full">
           Login with Google

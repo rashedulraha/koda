@@ -23,8 +23,8 @@ export function SignInForm() {
           Enter your email below to login to your account
         </CardDescription>
         <CardAction>
-          <Link href={"/signin"}>
-            <Button variant="link">Sign Up</Button>
+          <Link href={"/signup"}>
+            <Button variant="link">Sign up</Button>
           </Link>
         </CardAction>
       </CardHeader>

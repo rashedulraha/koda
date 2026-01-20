@@ -4,6 +4,7 @@ import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import Customer_Marquee from "./Shared/Customer_Marquee/Customer_Marquee";
 import { Customer_Data } from "./Shared/Customer_Data/Customer_data";
+import ModernProduct from "./Shared/ModernProduct/ModernProduct";
 
 const HomePage = () => {
   return (
@@ -69,6 +70,11 @@ const HomePage = () => {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* third section  */}
+        <div>
+          <ModernProduct />
         </div>
       </div>
     </Container>

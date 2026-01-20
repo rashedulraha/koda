@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import Customer_Marquee from "./Shared/Customer_Marquee/Customer_Marquee";
+import { Customer_Data } from "./Shared/Customer_Data/Customer_data";
 
 const HomePage = () => {
   return (
@@ -45,14 +46,14 @@ const HomePage = () => {
           <div className="my-5 md:my-10 relative group ">
             <div>
               <div className="hidden lg:grid grid-cols-4 gap-11 items-center justify-center place-content-center text-center transition-all decoration-800 group group-hover:blur-xl">
-                <h2 className="text-2xl font-bold">OpenAI</h2>
-                <h2 className="text-2xl font-bold">OpenAI</h2>
-                <h2 className="text-2xl font-bold">OpenAI</h2>
-                <h2 className="text-2xl font-bold">OpenAI</h2>
-                <h2 className="text-2xl font-bold">OpenAI</h2>
-                <h2 className="text-2xl font-bold">OpenAI</h2>
-                <h2 className="text-2xl font-bold">OpenAI</h2>
-                <h2 className="text-2xl font-bold">OpenAI</h2>
+                {/*  customer data  */}
+                {Customer_Data.map((customer) => (
+                  <>
+                    <h2 key={customer.id} className="text-2xl font-bold">
+                      {customer.name}
+                    </h2>
+                  </>
+                ))}
               </div>
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  group opacity-0 group-hover:opacity-100">
                 <Link href={"/meet-our-customer"}>

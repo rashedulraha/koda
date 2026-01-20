@@ -33,7 +33,7 @@ const HomePage = () => {
         </div>
 
         {/* second section */}
-        <div className="mt-5 md:mt-10">
+        <div className="mt-30">
           <div className="text-center space-y-2 ">
             <h3 className="text-base md:text-lg lg:text-xl font-semibold">
               Powering the world’s best product teams.

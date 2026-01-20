@@ -30,7 +30,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="py-3 border-b">
+      <div className="py-3 border-b  sticky top-0 z-999">
         <Container>
           <div className="flex items-center justify-between">
             <div>
@@ -61,7 +61,7 @@ const Navbar = () => {
       </div>
 
       {/* mobile menu section */}
-      <div className="md:hidden w-full  bg-card absolute z-10 top-15">
+      <div className="md:hidden w-full  bg-card absolute z-10 top-15" data-aos="fade-down">
         <Container>
           {open && <div className="py-5">{desktopMobileMenuLink}</div>}
         </Container>

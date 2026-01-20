@@ -2,6 +2,7 @@ import Container from "@/components/Responsive/Container";
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
+import Customer_Marquee from "./Shared/Customer_Marquee/Customer_Marquee";
 
 const HomePage = () => {
   return (
@@ -30,7 +31,7 @@ const HomePage = () => {
         </div>
 
         {/* second section */}
-        <div className="mt-5 md:mt-10 ">
+        <div className="mt-5 md:mt-10">
           <div className="text-center space-y-2 ">
             <h3 className="text-base md:text-lg lg:text-xl font-semibold">
               Powering the world’s best product teams.
@@ -41,9 +42,9 @@ const HomePage = () => {
           </div>
 
           {/* hover and customer section  */}
-          <div className="my-5 md:my-10 relative group">
+          <div className="my-5 md:my-10 relative group ">
             <div>
-              <div className="grid grid-cols-4 gap-11 items-center justify-center place-content-center text-center transition-all decoration-800 group group-hover:blur-xl">
+              <div className="hidden lg:grid grid-cols-4 gap-11 items-center justify-center place-content-center text-center transition-all decoration-800 group group-hover:blur-xl">
                 <h2 className="text-2xl font-bold">OpenAI</h2>
                 <h2 className="text-2xl font-bold">OpenAI</h2>
                 <h2 className="text-2xl font-bold">OpenAI</h2>
@@ -61,6 +62,9 @@ const HomePage = () => {
                     Meet our customer <ChevronRight />
                   </Button>
                 </Link>
+              </div>
+              <div className="lg:hidden">
+                <Customer_Marquee />
               </div>
             </div>
           </div>

@@ -30,7 +30,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="py-3 border-b">
+      <div className="py-3 border-b  sticky top-0 z-999">
         <Container>
           <div className="flex items-center justify-between">
             <div>

@@ -18,8 +18,6 @@ const SignInform = () => {
         <Button size={"lg"} className="w-75" variant={"outline"}>Continue with SAML SSO</Button>
         <Button size={"lg"} className="w-75" variant={"outline"}>Continue with passkey</Button>
       </div>
-
-
     </div>
   );
 };

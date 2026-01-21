@@ -1,5 +1,12 @@
-import { ChevronRight } from "lucide-react";
+// import image section
+import image1 from "@/modern_Image/modern1.png";
+import image2 from "@/modern_Image/modern2.png";
+import image3 from "@/modern_Image/modern3.png";
+
+import { Button } from "@/components/ui/button";
+import { ChevronRight, Plus } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const ModernProduct = () => {
   return (
@@ -27,7 +34,65 @@ const ModernProduct = () => {
         </div>
 
         {/* second section */}
-        <div></div>
+        <div className="my-5 md:my-8 lg:my-12  grid grid-cols-3 gap-3">
+          <div className="border border-muted rounded-2xl">
+            <div className="w-full">
+              {
+                <Image
+                  className="w-full object-cover"
+                  src={image1}
+                  alt={"modern image one"}></Image>
+              }
+            </div>
+            <div className=" px-5 pb-5 flex items-center justify-between">
+              <h2 className="text-base lg:text-xl font-bold">
+                Purpose built for product development
+              </h2>
+
+              <Button variant={"outline"} className="cursor-pointer">
+                <Plus />
+              </Button>
+            </div>
+          </div>
+          <div className="border border-muted rounded-2xl">
+            <div className="w-full">
+              {
+                <Image
+                  className="w-full object-cover"
+                  src={image2}
+                  alt={"modern image one"}></Image>
+              }
+            </div>
+            <div className=" px-5 pb-5 flex items-center justify-between">
+              <h2 className="text-base lg:text-xl font-bold">
+                Purpose built for product development
+              </h2>
+
+              <Button variant={"outline"} className="cursor-pointer">
+                <Plus />
+              </Button>
+            </div>
+          </div>
+          <div className="border border-muted rounded-2xl">
+            <div className="w-full">
+              {
+                <Image
+                  className="w-full object-cover"
+                  src={image3}
+                  alt={"modern image one"}></Image>
+              }
+            </div>
+            <div className=" px-5 pb-5 flex items-center justify-between">
+              <h2 className="text-base lg:text-xl font-bold">
+                Purpose built for product development
+              </h2>
+
+              <Button variant={"outline"} className="cursor-pointer">
+                <Plus />
+              </Button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

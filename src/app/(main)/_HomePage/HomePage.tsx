@@ -46,7 +46,7 @@ const HomePage = () => {
           {/* hover and customer section  */}
           <div className="my-5 md:my-10 relative group ">
             <div>
-              <div className="hidden lg:grid grid-cols-4 gap-11 items-center justify-center place-content-center text-center transition-all decoration-800 group group-hover:blur-xl">
+              <div className="hidden lg:grid grid-cols-4 gap-11 items-center justify-center place-content-center text-center transition-all decoration-800 group group-hover:blur-sm">
                 {/*  customer data  */}
                 {Customer_Data.map((customer) => (
                   <>

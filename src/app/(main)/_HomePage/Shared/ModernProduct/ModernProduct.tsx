@@ -5,15 +5,15 @@ import image3 from "@/modern_Image/modern3.png";
 const cards = [
   {
     image: image1,
-    title: "Purpose built for product development",
+    title: "Purpose-build for development",
   },
   {
     image: image2,
-    title: "Purpose built for product development",
+    title: "Designed to move fast",
   },
   {
     image: image3,
-    title: "Purpose built for product development",
+    title: "Crafted to perfection",
   },
 ];
 
@@ -48,12 +48,12 @@ const ModernProduct = () => {
         </div>
 
         {/* second section */}
-        <div className="my-5 md:my-8 lg:my-12 flex overflow-x-auto gap-4 pb-4 snap-x no-scrollbar">
+        <div className="my-5 md:my-8 lg:my-12 flex items-center overflow-x-auto gap-4 pb-4 snap-x no-scrollbar p-3">
           {cards.map((card, index) => (
             <div
               key={index}
-              className="min-w-70 snap-center border rounded-2xl bg-card">
-              <div className="w-full">
+              className="min-w-70 snap-center border rounded-2xl bg-card hover:-translate-y-2 transition-all duration-300">
+              <div className="w-full flex-1">
                 <Image
                   className="w-full object-cover"
                   src={card.image}
@@ -61,8 +61,12 @@ const ModernProduct = () => {
                 />
               </div>
 
-              <div className="px-5 pb-5 flex items-center justify-between gap-3">
-                <h2 className="text-base lg:text-xl font-bold">{card.title}</h2>
+              <div className="px-5 pb-5 flex items-center justify-between gap-3 ">
+                <h2
+                  title={card.title}
+                  className="text-base lg:text-xl font-bold truncate">
+                  {card.title}
+                </h2>
 
                 <Button variant="outline" className="cursor-pointer">
                   <Plus />
@@ -70,6 +74,17 @@ const ModernProduct = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/*third section */}
+        <div className="my-5 md:my-8 lg:my-12 flex items-center justify-between">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl flex-1 font-bold leading-14">
+            Plan the present. Build the future.
+          </h2>
+          <div className="space-x-3 ">
+            <Button variant={"outline"}>Contact sales</Button>
+            <Button>Get start</Button>
+          </div>
         </div>
       </div>
     </div>

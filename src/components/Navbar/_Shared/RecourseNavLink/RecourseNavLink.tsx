@@ -13,7 +13,10 @@ const RecourseNavLink = () => {
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Recurse</NavigationMenuTrigger>
+            <NavigationMenuTrigger className="bg-transparent hover:bg-transparent focus:bg-transparent active:bg-transparent shadow-none">
+              Recurse
+            </NavigationMenuTrigger>
+
             <NavigationMenuContent className="bg-background">
               <div className="flex items-start  md:w-120 lg:w-150 lg:grid-cols-[.75fr_1fr] bg-card rounded border border-muted">
                 {/* Recurse first container */}

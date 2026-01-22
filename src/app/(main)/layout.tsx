@@ -9,7 +9,7 @@ export default function MainLayout({
 }) {
   return (
     <div className="flex min-h-screen flex-col">
-      <header>
+      <header className="sticky top-0 z-999 backdrop-blur-3xl">
         <Navbar />
       </header>
       <main className="flex-1">{children}</main>

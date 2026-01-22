@@ -13,7 +13,10 @@ const ProductNavLink = () => {
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Product</NavigationMenuTrigger>
+            <NavigationMenuTrigger className="bg-transparent hover:bg-transparent focus:bg-transparent active:bg-transparent shadow-none">
+              Product
+            </NavigationMenuTrigger>
+
             <NavigationMenuContent className="bg-background">
               <div className="flex items-start  md:w-150 lg:w-180 lg:grid-cols-[.75fr_1fr] bg-card rounded border border-muted">
                 {/* products first container */}

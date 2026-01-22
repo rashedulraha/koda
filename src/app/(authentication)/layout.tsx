@@ -1,4 +1,3 @@
-// app/(authentication)/layout.tsx
 import Container from "@/components/Responsive/Container";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
@@ -12,7 +11,7 @@ export default function AuthLayout({
 }) {
   return (
     <div className="auth-wrapper flex flex-col min-h-screen">
-      <header className="relative p-4  border-b backdrop-blur-3xl ">
+      <header className="relative p-4  border-b backdrop-blur-3xl">
         <Container>
           <div className="flex items-center">
             <div className="absolute">

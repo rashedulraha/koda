@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { SuggestionsData } from "../Data/SuggestionsData";
 import { Status, Suggestion } from "../Types/SuggestionType";
+import { ImageAvatar } from "../ImageAvatar/ImageAvatar";
 
 const STATUS_STYLES: Record<Status, string> = {
   suggested: "border-primary/40 bg-primary/10 text-primary",
@@ -35,7 +36,7 @@ const TriageIntelligence = () => {
   };
 
   return (
-    <div className="relative my-5 min-h-112.5 p-8 font-sans">
+    <div className="relative my-5 min-h-112.5 font-sans">
       {/* ================= Background Layer ================= */}
       <div
         className="max-w-2xl transition-all duration-700"
@@ -82,7 +83,7 @@ const TriageIntelligence = () => {
                       {suggestion.id === "nan-placeholder" ? (
                         <>
                           <span className="mr-1.5 flex size-4 items-center justify-center rounded-full bg-muted text-[8px]">
-                            nan
+                            <ImageAvatar />
                           </span>
                           <span className="opacity-70">nan</span>
                         </>
@@ -109,7 +110,7 @@ const TriageIntelligence = () => {
       </div>
 
       {activeSuggestion && activeSuggestion.type !== "empty" && (
-        <Card className="text-card-foreground flex flex-col gap-2 rounded-xl border absolute left-35 top-38 z-10 w-85 animate-in zoom-in-95 fade-in border-border bg-popover p-5 shadow-2xl duration-500">
+        <Card className="text-card-foreground flex flex-col gap-2 rounded-xl border absolute left-35 top-30 z-10 w-75 animate-in zoom-in-95 fade-in border-border bg-popover p-5 shadow-2xl duration-500">
           <div className="flex items-center gap-2">
             {activeSuggestion.icon && (
               <activeSuggestion.icon className="size-4 text-primary" />
@@ -143,7 +144,7 @@ const TriageIntelligence = () => {
             </div>
           </div>
 
-          <div className="mt-6 border-t border-border/50 pt-5">
+          <div className="mt-3 border-t border-border/50 pt-5">
             <h4
               title="Why this project was suggested"
               className="mb-1 text-sm font-bold uppercase tracking-widest text-foreground/80 truncate">

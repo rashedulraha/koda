@@ -1,52 +1,61 @@
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
 import TriageSuggestionCard from "./Components/TriageSuggestionCard/TriageSuggestionCard";
-import Koda_Mpc from "./Components/Koda_mcp/Koda_Mpc";
+
+import AskAnythingBar from "./Components/AskAnythingBar/AskAnythingBar";
 
 const Ai_assisted_product = () => {
   return (
     <>
-      {/*  fires section */}
-      <div className="space-y-6">
-        <div className="flex items-center hover:translate-x-1 transition-all duration-500 ">
-          <h2 className="text-sm font-semibold ">Artificial intelligent</h2>
+      {/* Hero Section */}
+      <div className="space-y-3">
+        <div className="flex items-center hover:translate-x-1 transition-all duration-500 cursor-pointer">
+          <h2 className="text-sm font-semibold">Artificial intelligent</h2>
           <ChevronRight size={17} />
         </div>
-        {/*  assisted h1 section */}
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold lg:text-bold ">
+
+        {/* Main Heading */}
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
           AI-assisted product development
         </h1>
-        <p className="max-w-84 font-semibold text-muted-foreground ">
-          <span className="font-bold text-white">Linear for Agents. </span>
+
+        {/* Description */}
+        <p className="max-w-md font-semibold text-muted-foreground">
+          <span className="font-bold text-foreground">Linear for Agents. </span>
           Choose from a variety of AI agents and start delegating work, from
           code generation to other technical tasks.
         </p>
-        <Button variant={"outline"}>
-          learn more <ChevronRight size={19} />
+
+        {/* CTA Button */}
+        <Button variant="outline" className="w-full sm:w-fit">
+          learn more <ChevronRight size={19} className="ml-1" />
         </Button>
       </div>
-      {/*  second section */}
-      <div className="flex items-center flex-col md:flex-row my-5 md:my-8 lg:my-12">
-        <div className="flex-1 p-6 lg:p-10 border border-l-0">
-          <h2 className="font-semibold text-lg sm:text-xl md:text-xl lg:text-2xl mb-3 ">
+
+      {/* Two-Column Section */}
+      <div className="flex flex-col md:flex-row my-12  divide-y md:divide-y-0 md:divide-x divide-border">
+        {/* Left Column */}
+        <div className="flex-1 p-6 lg:p-10">
+          <h2 className="font-semibold text-xl md:text-2xl mb-3">
             Self-driving product operations
           </h2>
-          <p className="text-sm font-semibold  md:text-base text-muted-foreground">
+          <p className="text-sm md:text-base text-muted-foreground mb-6">
             Streamline your product development workflows with AI assistance for
             routine, manual tasks.
           </p>
-          {/*  card section */}
+          {/* Card Component */}
           <TriageSuggestionCard />
         </div>
-        <div className="flex-1 p-6 lg:p-10  border-t border-b ">
-          <h2 className="font-semibold text-lg sm:text-xl md:text-xl lg:text-2xl mb-3 ">
-            Koda MCP
-          </h2>
-          <p className="text-sm font-semibold md:text-base text-muted-foreground">
+
+        {/* Right Column */}
+        <div className="flex-1 p-6 lg:p-10">
+          <h2 className="font-semibold text-xl md:text-2xl mb-3">Koda MCP</h2>
+          <p className="text-sm md:text-base text-muted-foreground mb-6">
             Connect Linear to your favorite tools including Cursor, Claude,
             ChatGPT, and more.
           </p>
-          <Koda_Mpc />
+          {/* Koda Component */}
+          <AskAnythingBar />
         </div>
       </div>
     </>

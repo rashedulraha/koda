@@ -8,7 +8,7 @@ const Ai_assisted_product = () => {
   return (
     <>
       {/* Hero Section */}
-      <div className="space-y-3">
+      <div className="space-y-3 ">
         <div className="flex items-center hover:translate-x-1 transition-all duration-500 cursor-pointer">
           <h2 className="text-sm font-semibold">Artificial intelligent</h2>
           <ChevronRight size={17} />
@@ -33,7 +33,7 @@ const Ai_assisted_product = () => {
       </div>
 
       {/* Two-Column Section */}
-      <div className="flex flex-col md:flex-row my-12  divide-y md:divide-y-0 md:divide-x divide-border">
+      <div className="flex flex-col md:flex-row my-12  divide-y md:divide-y-0 md:divide-x divide-border overflow-hidden">
         {/* Left Column */}
         <div className="flex-1 p-6 lg:p-10">
           <h2 className="font-semibold text-xl md:text-2xl mb-3">

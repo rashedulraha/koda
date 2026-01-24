@@ -27,8 +27,8 @@ const ModernProduct = () => {
     <div className="my-15 md:my-20 lg:my-25 ">
       <div>
         {/* first section */}
-        <div className="flex items-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl flex-1 font-bold leading-14">
+        <div className="flex items-center flex-col md:flex-row">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl flex-1 font-bold md:leading-14 mb-5 md:mb-0">
             Made for modern product teams
           </h2>
           <p className="flex-1 text-sm font-normal ">
@@ -36,7 +36,7 @@ const ModernProduct = () => {
             world-class product teams from the rest: relentless focus, fast
             execution, and a commitment to the quality of craft.
             <Link href={"/make-the-switch"}>
-              <span className="flex items-center font-bold group w-fit text-sidebar-primary">
+              <span className="flex items-center font-bold group w-fit text-sidebar-primary mt-2">
                 Make the switch
                 <ChevronRight
                   size={18}

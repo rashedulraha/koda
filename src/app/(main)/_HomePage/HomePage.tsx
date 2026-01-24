@@ -15,7 +15,7 @@ const HomePage = () => {
         <div className="mt-10 md:mt-20">
           {/* first section */}
           <div>
-            <h1 className="text-2xl text-center md:text-left sm:text-3xl md:text-5xl lg:text-6xl font-medium md:leading-17">
+            <h1 className="text-2xl text-left sm:text-3xl md:text-5xl lg:text-6xl font-medium md:leading-17 text-wrap">
               Koda is a purpose-built tool for <br /> planning and building
               products
             </h1>
@@ -24,7 +24,7 @@ const HomePage = () => {
               Streamline issues, projects, and product roadmaps
             </p>
             {/* action button */}
-            <div className="mt-5 md:mt-8 space-x-5">
+            <div className="mt-5 md:mt-8 space-x-5 space-y-4 md:space-y-0 ">
               <Button className="cursor-pointer">Start building</Button>
               <Button variant={"outline"} className="cursor-pointer">
                 <span className="font-bold capitalize text-sidebar-primary">
@@ -37,7 +37,7 @@ const HomePage = () => {
 
           {/* second section */}
           <div className="mt-30">
-            <div className="text-center space-y-2 ">
+            <div className="text-center space-y-2">
               <h3 className="text-base md:text-lg lg:text-xl font-semibold">
                 Powering the world’s best product teams.
               </h3>
@@ -84,9 +84,7 @@ const HomePage = () => {
 
       {/* fourth section */}
       <div className="bg-linear-to-b from-card to-background py-8 md:my-12 lg:py-14">
-        <Container>
-          <Ai_assisted_product />
-        </Container>
+        <Ai_assisted_product />
       </div>
 
       {/* fifth section */}

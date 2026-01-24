@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
-import React from "react";
 import TriageSuggestionCard from "./Components/TriageSuggestionCard/TriageSuggestionCard";
+import Koda_Mpc from "./Components/Koda_mcp/Koda_Mpc";
 
 const Ai_assisted_product = () => {
   return (
@@ -38,7 +38,7 @@ const Ai_assisted_product = () => {
           {/*  card section */}
           <TriageSuggestionCard />
         </div>
-        <div className="flex-1 p-6 lg:p-10  border-t border-b">
+        <div className="flex-1 p-6 lg:p-10  border-t border-b ">
           <h2 className="font-semibold text-lg sm:text-xl md:text-xl lg:text-2xl mb-3 ">
             Koda MCP
           </h2>
@@ -46,6 +46,7 @@ const Ai_assisted_product = () => {
             Connect Linear to your favorite tools including Cursor, Claude,
             ChatGPT, and more.
           </p>
+          <Koda_Mpc />
         </div>
       </div>
     </>

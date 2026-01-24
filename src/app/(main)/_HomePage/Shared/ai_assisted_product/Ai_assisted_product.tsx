@@ -5,9 +5,9 @@ import React from "react";
 const Ai_assisted_product = () => {
   return (
     <div className="space-y-6 bg-card">
-      <div className="flex items-center  ">
-        <h2 className="text-sm font-semibold">Artificial intelligent</h2>
-        <ChevronRight size={19} />
+      <div className="flex items-center hover:translate-x-1 transition-all duration-500 ">
+        <h2 className="text-sm font-semibold ">Artificial intelligent</h2>
+        <ChevronRight size={17} />
       </div>
       {/*  assisted h1 section */}
       <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold lg:text-bold ">

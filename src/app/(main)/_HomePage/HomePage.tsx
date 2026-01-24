@@ -6,6 +6,7 @@ import Customer_Marquee from "./Shared/Customer_Marquee/Customer_Marquee";
 import { Customer_Data } from "./Shared/Customer_Data/Customer_data";
 import ModernProduct from "./Shared/ModernProduct/ModernProduct";
 import Ai_assisted_product from "./Shared/ai_assisted_product/Ai_assisted_product";
+import Build_the_future from "./Shared/Build_the_future/Build_the_future";
 
 const HomePage = () => {
   return (
@@ -78,15 +79,22 @@ const HomePage = () => {
           <div>
             <ModernProduct />
           </div>
-
-          {/* fourth section */}
         </div>
       </Container>
+
+      {/* fourth section */}
       <div className="bg-card py-8 md:my-12 lg:py-14">
         <Container>
           <Ai_assisted_product />
         </Container>
-      </div>{" "}
+      </div>
+
+      {/* fifth section */}
+      <div>
+        <Container>
+          <Build_the_future />
+        </Container>
+      </div>
     </>
   );
 };

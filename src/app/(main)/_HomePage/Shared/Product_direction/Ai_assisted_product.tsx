@@ -5,27 +5,31 @@ import TriageSuggestionCard from "./Components/TriageSuggestionCard/TriageSugges
 import AskAnythingBar from "./Components/AskAnythingBar/AskAnythingBar";
 import Container from "@/components/Responsive/Container";
 
-const Ai_assisted_product = () => {
+const Product_direction = () => {
   return (
     <>
       {/* Hero Section */}
       <Container>
         <div className="space-y-3 ">
           <div className="flex items-center hover:translate-x-1 transition-all duration-500 cursor-pointer">
-            <h2 className="text-sm font-semibold">Artificial intelligent</h2>
+            <p className="text-sm font-semibold">
+              Project and long-term planning
+            </p>
             <ChevronRight size={17} />
           </div>
 
           {/* Main Heading */}
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-            AI-assisted product development
+            Set the product direction
           </h1>
 
           {/* Description */}
           <p className="max-w-md font-semibold text-muted-foreground">
-            <span className="font-bold text-foreground">Koda for Agents. </span>
-            Choose from a variety of AI agents and start delegating work, from
-            code generation to other technical tasks.
+            <span className="text-bold text-card-foreground">
+              Align your team around a unified product timeline.
+            </span>{" "}
+            Plan, manage, and track all product initiatives with Linear’s visual
+            planning tools.
           </p>
 
           {/* CTA Button */}
@@ -67,4 +71,4 @@ const Ai_assisted_product = () => {
   );
 };
 
-export default Ai_assisted_product;
+export default Product_direction;

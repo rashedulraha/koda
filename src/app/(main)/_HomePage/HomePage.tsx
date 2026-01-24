@@ -7,6 +7,7 @@ import { Customer_Data } from "./Shared/Customer_Data/Customer_data";
 import ModernProduct from "./Shared/ModernProduct/ModernProduct";
 import Ai_assisted_product from "./Shared/ai_assisted_product/Ai_assisted_product";
 import Build_the_future from "./Shared/Build_the_future/Build_the_future";
+import Product_direction from "./Shared/Product_direction/Ai_assisted_product";
 
 const HomePage = () => {
   return (
@@ -88,6 +89,11 @@ const HomePage = () => {
       </div>
 
       {/* fifth section */}
+      <div className="bg-linear-to-b from-card to-background py-8 md:my-12 lg:py-14">
+        <Product_direction />
+      </div>
+
+      {/* sixth section */}
       <div>
         <Container>
           <Build_the_future />

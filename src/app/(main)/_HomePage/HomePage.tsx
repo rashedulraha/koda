@@ -83,7 +83,7 @@ const HomePage = () => {
       </Container>
 
       {/* fourth section */}
-      <div className="bg-card py-8 md:my-12 lg:py-14">
+      <div className="bg-linear-to-b from-card to-background py-8 md:my-12 lg:py-14">
         <Container>
           <Ai_assisted_product />
         </Container>

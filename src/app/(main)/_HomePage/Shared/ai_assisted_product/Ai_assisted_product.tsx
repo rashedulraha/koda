@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
 import React from "react";
+import TriageSuggestionCard from "./Components/TriageSuggestionCard/TriageSuggestionCard";
 
 const Ai_assisted_product = () => {
   return (
@@ -34,6 +35,8 @@ const Ai_assisted_product = () => {
             Streamline your product development workflows with AI assistance for
             routine, manual tasks.
           </p>
+          {/*  card section */}
+          <TriageSuggestionCard />
         </div>
         <div className="flex-1 p-6 lg:p-10  border-t border-b">
           <h2 className="font-semibold text-lg sm:text-xl md:text-xl lg:text-2xl mb-3 ">

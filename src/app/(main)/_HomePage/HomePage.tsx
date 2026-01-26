@@ -53,13 +53,14 @@ const HomePage = () => {
                           </span>
 
                           {/* Inner Content Container */}
-                          <div className="relative flex space-x-2 items-center z-10 rounded-full bg-background py-1 px-4 ring-1 ring-border/50">
-                            <span className="font-bold capitalize text-primary">
-                              Meet
+                          <div className="relative flex items-center  z-10 rounded-full bg-background py-1 px-4 ring-1 ring-border/50">
+                            <span className="font-bold capitalize text-primary mr-1">
+                              new:
                             </span>
                             <span className="text-muted-foreground group-hover:text-foreground transition-colors">
-                              our customer
+                              koda agent for slack
                             </span>
+
                             <ChevronRight className="h-4 w-4 text-muted-foreground group-hover:text-foreground transition-transform group-hover:translate-x-0.5" />
                           </div>
 

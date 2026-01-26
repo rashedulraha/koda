@@ -3,6 +3,7 @@ import Container from "@/components/Responsive/Container";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
+import { TextGenerateEffectDemo } from "../TextGenerateEffectDemo/TextGenerateEffectDemo";
 
 export function BackgroundBeamsDemo() {
   return (
@@ -10,8 +11,7 @@ export function BackgroundBeamsDemo() {
       <Container>
         <div className="relative z-10">
           <h1 className="text-2xl text-left sm:text-3xl md:text-5xl lg:text-6xl font-medium md:leading-17 text-wrap bg-clip-text text-transparent bg-linear-to-b from-foreground to-muted-foreground/60">
-            Koda is a purpose-built tool for <br /> planning and building
-            products
+            <TextGenerateEffectDemo />
           </h1>
 
           <p className="text-muted-foreground text-sm md:text-base leading-8 mt-3 md:mt-5 max-w-2xl">

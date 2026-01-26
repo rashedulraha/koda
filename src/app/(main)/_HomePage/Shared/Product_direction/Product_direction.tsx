@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
-import TriageSuggestionCard from "./Components/TriageSuggestionCard/TriageSuggestionCard";
 
 import AskAnythingBar from "./Components/AskAnythingBar/AskAnythingBar";
 import Container from "@/components/Responsive/Container";
+import ProjectOverview from "./Components/ProjectOverview/ProjectOverview";
 
 const Product_direction = () => {
   return (
@@ -51,12 +51,13 @@ const Product_direction = () => {
             routine, manual tasks.
           </p>
           {/* Card Component */}
-          <TriageSuggestionCard />
+          <ProjectOverview />
         </div>
 
         {/* Right Column */}
-        <Container>
-          <div className="flex-1 py-4 md:p-6 lg:p-10">
+
+        <div className="flex-1 py-4 md:p-6 lg:p-10">
+          <Container>
             <h2 className="font-semibold text-xl md:text-2xl mb-3">Koda MCP</h2>
             <p className="text-sm md:text-base text-muted-foreground mb-6">
               Connect Linear to your favorite tools including Cursor, Claude,
@@ -64,8 +65,8 @@ const Product_direction = () => {
             </p>
             {/* Koda Component */}
             <AskAnythingBar />
-          </div>
-        </Container>
+          </Container>
+        </div>
       </div>
     </>
   );

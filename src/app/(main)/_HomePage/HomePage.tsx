@@ -17,7 +17,6 @@ const HomePage = () => {
         <div>
           {/* first section */}
           <BackgroundBeamsDemo />
-
           {/* second section */}
           <Container>
             {/* second section */}

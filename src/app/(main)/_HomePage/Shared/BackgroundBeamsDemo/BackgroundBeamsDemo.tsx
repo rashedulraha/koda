@@ -6,7 +6,7 @@ import { ChevronRight } from "lucide-react";
 
 export function BackgroundBeamsDemo() {
   return (
-    <div className="min-h-screen overflow-hidden bg-background relative flex flex-col antialiased py-10 md:py-14 lg:py-20">
+    <div className="lg:min-h-[calc(100vh-62px)] overflow-hidden bg-background relative flex flex-col antialiased py-10 md:py-14 lg:py-20">
       <Container>
         <div className="relative z-10">
           <h1 className="text-2xl text-left sm:text-3xl md:text-5xl lg:text-6xl font-medium md:leading-17 text-wrap bg-clip-text text-transparent bg-linear-to-b from-foreground to-muted-foreground/60">
@@ -23,16 +23,16 @@ export function BackgroundBeamsDemo() {
             <Button className="cursor-pointer">Start building</Button>
 
             <Button variant="outline" className="cursor-pointer">
-              <span className="font-bold capitalize text-primary mr-2">
-                new:
+              <span className="font-bold capitalize text-sidebar-primary">
+                new :
               </span>
-              koda agent for slack <ChevronRight className="ml-1 h-4 w-4" />
+              koda agent for slack <ChevronRight className="h-4 w-4" />
             </Button>
           </div>
         </div>
       </Container>
 
-      {/* BackgroundBeams will now render behind the content due to z-10 on the container */}
+      {/* BackgroundBeams */}
       <BackgroundBeams />
     </div>
   );

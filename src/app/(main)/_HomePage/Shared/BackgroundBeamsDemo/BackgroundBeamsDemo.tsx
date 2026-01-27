@@ -40,8 +40,8 @@ export function BackgroundBeamsDemo() {
 
             <Button
               variant="outline"
-              className="flex items-center gap-2 transition-all duration-300 hover:bg-secondary/50">
-              <span className="font-bold text-primary">New:</span>
+              className="flex items-center gap-2 transition-all duration-300 hover:bg-secondary/50 hover:-translate-y-0.5">
+              <span className="font-bold text-blue-500">New : </span>
               Koda agent for Slack
               <ChevronRight className="h-4 w-4" />
             </Button>

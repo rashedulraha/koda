@@ -6,11 +6,9 @@ const Customer_Marquee = () => {
     <Marquee>
       <div className="flex items-center gap-11">
         {Customer_Data.map((customer, i) => (
-          <>
-            <h2 key={customer.id ?? i} className="text-2xl font-bold">
-              {customer.name}
-            </h2>
-          </>
+          <h2 key={customer.id ?? i} className="text-2xl font-bold">
+            {customer.name}
+          </h2>
         ))}
       </div>
     </Marquee>

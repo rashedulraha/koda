@@ -8,7 +8,7 @@ export function WorldMapDemo() {
   return (
     <div className="w-full py-10 ">
       <div className="max-w-7xl mx-auto text-center px-4">
-        <p className="font-bold text-2xl md:text-5xl text-foreground">
+        <p className="font-semibold text-2xl md:text-4xl text-foreground">
           Global{" "}
           <span className="text-primary">
             {title.split("").map((char, idx) => (

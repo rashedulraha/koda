@@ -4,37 +4,59 @@ import { GrGoogle } from "react-icons/gr";
 
 const SignInform = () => {
   return (
-    <div className="flex flex-col space-y-5 items-center justify-center w-md ">
-      <div className="flex items-center justify-center flex-col gap-2">
-        <h2 className="font-medium text-lg md:text-2xl">Koda</h2>
+    <div className="flex flex-col space-y-8 items-center justify-center w-full max-w-md mx-auto p-4">
+      <div className="flex items-center justify-center flex-col gap-3 text-center">
+        <h2 className="font-bold text-2xl md:text-3xl tracking-tight text-foreground">
+          Koda
+        </h2>
 
-        <div className="flex items-center justify-between gap-10">
-          <p>Login in to koda</p>
-          <p className="text-sidebar-primary">
-            <Link href={"/signup"}>Signup</Link>
+        <div className="flex items-center gap-2 text-sm md:text-base">
+          <p className="text-muted-foreground">Login to Koda</p>
+          <span className="text-muted-foreground">•</span>
+          <p className="text-primary font-medium hover:underline">
+            <Link href={"/signup"}>Create account</Link>
           </p>
         </div>
       </div>
-      <div className="w-full flex items-center justify-center flex-col">
-        <Button size={"lg"} className="w-75">
-          <GrGoogle />
-          Continue with google
+
+      <div className="w-full flex items-center justify-center flex-col space-y-2">
+        <Button size={"lg"} className="w-full flex gap-2 items-center">
+          <GrGoogle className="text-lg" />
+          Continue with Google
         </Button>
-        <p className="text-muted-foreground mt-2 text-center">
-          You use google to login last time
+
+        <p className="text-xs text-muted-foreground text-center">
+          You used Google to login last time
         </p>
       </div>
-      <div className="flex items-center justify-center flex-col space-y-5">
-        <Button size={"lg"} className="w-75" variant={"outline"}>
-          Continue with email
+
+      <div className="relative w-full">
+        <div className="absolute inset-0 flex items-center">
+          <span className="w-full border-t border-muted" />
+        </div>
+        <div className="relative flex justify-center text-xs uppercase">
+          <span className="bg-background px-2 text-muted-foreground">
+            Or continue with
+          </span>
+        </div>
+      </div>
+
+      <div className="w-full flex items-center justify-center flex-col space-y-3">
+        <Button size={"lg"} className="w-full text-sm" variant={"outline"}>
+          Continue with Email
         </Button>
-        <Button size={"lg"} className="w-75" variant={"outline"}>
+        <Button size={"lg"} className="w-full text-sm" variant={"outline"}>
           Continue with SAML SSO
         </Button>
-        <Button size={"lg"} className="w-75" variant={"outline"}>
-          Continue with passkey
+        <Button size={"lg"} className="w-full text-sm" variant={"outline"}>
+          Continue with Passkey
         </Button>
       </div>
+
+      <p className="text-[12px] text-center text-muted-foreground px-8">
+        By clicking continue, you agree to our Terms of Service and Privacy
+        Policy.
+      </p>
     </div>
   );
 };

@@ -8,12 +8,12 @@ import { TextGenerateEffectDemo } from "../TextGenerateEffectDemo/TextGenerateEf
 
 export function BackgroundBeamsDemo() {
   return (
-    <div className="relative flex flex-col overflow-hidden bg-background py-10 md:py-14 lg:py-20 lg:min-h-[calc(100vh-62px)]">
+    <div className="relative flex flex-col overflow-hidden bg-background py-10 md:py-14 lg:py-20">
       <Container>
         <div className="relative z-10">
           <TextGenerateEffectDemo />
 
-          <p className="mt-3 md:mt-5 text-sm md:text-base leading-8 text-muted-foreground max-w-2xl">
+          <p className="mt-3 md:mt-5 text-sm md:text-base md:leading-8 text-muted-foreground max-w-2xl">
             Meet the system for modern software development. <br />
             Streamline issues, projects, and product roadmaps.
           </p>

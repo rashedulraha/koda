@@ -1,75 +1,54 @@
-/* eslint-disable @next/next/no-img-element */
 /* eslint-disable react-hooks/set-state-in-effect */
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import React, { useEffect, useMemo, useState, memo } from "react";
 import { motion } from "framer-motion";
 import DottedMap from "dotted-map";
 
-// --- Interfaces ---
-interface Coordinate {
-  lat: number;
-  lng: number;
-  label?: string;
-}
-
-interface DotPath {
-  start: Coordinate;
-  end: Coordinate;
-}
-
 interface WorldMapProps {
-  dots?: DotPath[];
+  dots?: Array<{
+    start: { lat: number; lng: number };
+    end: { lat: number; lng: number };
+  }>;
   lineColor?: string;
 }
 
-const generateStaticDarkMap = (): string => {
-  const map = new DottedMap({ height: 60, grid: "diagonal" });
-
-  return map.getSVG({
-    radius: 0.22,
-    color: "rgba(255, 255, 255, 0.3)",
-    shape: "circle",
-    backgroundColor: "black",
-  });
-};
-
-const projectPoint = (lat: number, lng: number) => {
-  return {
-    x: (lng + 180) * (800 / 360),
-    y: (90 - lat) * (400 / 180),
-  };
-};
-
-// --- Main Component ---
 const WorldMap: React.FC<WorldMapProps> = ({
   dots = [],
   lineColor = "#0ea5e9",
 }) => {
-  const [mounted, setMounted] = useState<boolean>(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  const svgMapData = useMemo(() => generateStaticDarkMap(), []);
+  const svgMapData = useMemo(() => {
+    const map = new DottedMap({ height: 60, grid: "diagonal" });
+    return map.getSVG({
+      radius: 0.22,
+      color: "white",
+      shape: "circle",
+    });
+  }, []);
 
-  // Hydration safety check
-  if (!mounted) {
-    return <div className="w-full aspect-2/1 bg-background rounded-lg" />;
-  }
+  const projectPoint = (lat: number, lng: number) => ({
+    x: (lng + 180) * (800 / 360),
+    y: (90 - lat) * (400 / 180),
+  });
+
+  if (!mounted) return <div className="w-full aspect-2/1 rounded-lg" />;
 
   return (
-    <div className="relative w-full aspect-2/1 bg-background rounded-lg overflow-hidden select-none">
-      {/* Background Static Map */}
+    <div className="relative w-full aspect-2/1 rounded-lg overflow-hidden select-none">
       <img
         src={`data:image/svg+xml;utf8,${encodeURIComponent(svgMapData)}`}
-        className="absolute inset-0 w-full h-full pointer-events-none"
-        alt="World Map Background"
+        className="absolute inset-0 w-full h-full pointer-events-none opacity-40 dark:invert-0 invert transition-all duration-500"
+        alt="World Map"
         draggable={false}
       />
 
-      {/* Animation Layer */}
       <svg
         viewBox="0 0 800 400"
         className="absolute inset-0 w-full h-full pointer-events-none">
@@ -91,12 +70,10 @@ const WorldMap: React.FC<WorldMapProps> = ({
           const end = projectPoint(dot.end.lat, dot.end.lng);
           const midX = (start.x + end.x) / 2;
           const midY = Math.min(start.y, end.y) - 50;
-
           const pathD = `M ${start.x} ${start.y} Q ${midX} ${midY} ${end.x} ${end.y}`;
 
           return (
-            <g key={`path-group-${i}`}>
-              {/* The Path */}
+            <g key={i}>
               <motion.path
                 d={pathD}
                 fill="none"
@@ -112,10 +89,8 @@ const WorldMap: React.FC<WorldMapProps> = ({
                   ease: "easeInOut",
                 }}
               />
-
-              {/* Glowing Points */}
               {[start, end].map((point, idx) => (
-                <g key={`point-${idx}-${i}`}>
+                <g key={`${i}-${idx}`}>
                   <circle cx={point.x} cy={point.y} r="2" fill={lineColor} />
                   <circle
                     cx={point.x}

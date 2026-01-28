@@ -30,7 +30,11 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts",
     "src/components/Navbar/Navigation/npm dlx shadcn@latest add navigation-menu",
-    "src/app/(main)/_HomePage/Shared/customer_murque/Customer_Marqueetsx"
+    "src/app/(main)/_HomePage/Shared/customer_murque/Customer_Marqueetsx",
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "additional.d.ts"
   ],
   "exclude": ["node_modules"]
 }

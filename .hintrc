@@ -1,18 +1,14 @@
 {
-  "extends": [
-    "development"
-  ],
+  "extends": ["development"],
   "hints": {
     "compat-api/css": [
       "default",
       {
-        "ignore": [
-          "scrollbar-width",
-          "scrollbar-width: none"
-        ]
-      }
+        "ignore": ["scrollbar-width", "scrollbar-width: none"],
+      },
     ],
     "no-inline-styles": "off",
-    "button-type": "off"
-  }
+    "button-type": "off",
+    "typescript-config/consistent-casing": "off",
+  },
 }

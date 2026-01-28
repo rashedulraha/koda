@@ -84,7 +84,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="mt-10 flex items-center gap-1 justify-center my-5 md:my-10 lg:my-14 text-sidebar-primary hover:underline ">
+        <div className="mt-10 flex items-center gap-1 justify-center my-5 md:my-10 lg:my-14 text-blue-500 hover:underline ">
           <CiCircleCheck />
 
           <Link href={"/all-system-operation"}>All system operation</Link>

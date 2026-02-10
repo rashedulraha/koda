@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useState } from "react";
 import { GrGoogle } from "react-icons/gr";
+import ManualSignin from "./ManualSignin";
 
 const SignInform = () => {
   const [isEmailAndPassword, setEmailAndPassword] = useState<boolean>(false);
@@ -53,17 +54,16 @@ const SignInform = () => {
       </div>
 
       <div className="w-full flex items-center justify-center flex-col space-y-3">
-        <Button
-          onClick={handleChangeCondition}
-          size={"lg"}
-          className="w-full text-sm"
-          variant={"outline"}>
-          Create with email and password
-        </Button>
-
         {/* condition form */}
         {isEmailAndPassword ? (
           <>
+            <Button
+              onClick={handleChangeCondition}
+              size={"lg"}
+              className="w-full text-sm"
+              variant={"outline"}>
+              Create with email and password
+            </Button>
             <Button size={"lg"} className="w-full text-sm" variant={"outline"}>
               Continue with SAML SSO
             </Button>
@@ -72,7 +72,9 @@ const SignInform = () => {
             </Button>
           </>
         ) : (
-          ""
+          <>
+            <ManualSignin />
+          </>
         )}
       </div>
 

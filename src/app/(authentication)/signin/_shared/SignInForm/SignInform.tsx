@@ -1,8 +1,19 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useState } from "react";
 import { GrGoogle } from "react-icons/gr";
 
 const SignInform = () => {
+  const [isEmailAndPassword, setEmailAndPassword] = useState<boolean>(false);
+
+  // handle isEmail and password form function
+
+  const handleChangeCondition = () => {
+    setEmailAndPassword(!isEmailAndPassword);
+  };
+
   return (
     <div className="flex flex-col space-y-8 items-center justify-center w-full max-w-md mx-auto p-4">
       <div className="flex items-center justify-center flex-col gap-3 text-center">
@@ -42,15 +53,27 @@ const SignInform = () => {
       </div>
 
       <div className="w-full flex items-center justify-center flex-col space-y-3">
-        <Button size={"lg"} className="w-full text-sm" variant={"outline"}>
-          Continue with Email
+        <Button
+          onClick={handleChangeCondition}
+          size={"lg"}
+          className="w-full text-sm"
+          variant={"outline"}>
+          Create with email and password
         </Button>
-        <Button size={"lg"} className="w-full text-sm" variant={"outline"}>
-          Continue with SAML SSO
-        </Button>
-        <Button size={"lg"} className="w-full text-sm" variant={"outline"}>
-          Continue with Passkey
-        </Button>
+
+        {/* condition form */}
+        {isEmailAndPassword ? (
+          <>
+            <Button size={"lg"} className="w-full text-sm" variant={"outline"}>
+              Continue with SAML SSO
+            </Button>
+            <Button size={"lg"} className="w-full text-sm" variant={"outline"}>
+              Continue with Passkey
+            </Button>
+          </>
+        ) : (
+          ""
+        )}
       </div>
 
       <p className="text-[12px] text-center text-muted-foreground px-8">

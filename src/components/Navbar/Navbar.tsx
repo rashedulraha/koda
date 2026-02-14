@@ -47,11 +47,16 @@ const Navbar = () => {
 
               {desktopMobileMenuLink}
             </div>
-            <div className="flex items-center space-x-3 justify-end">
+            <div className="flex items-center space-x-7 justify-end">
               <ModeToggle />
-              <Link href={"/signin"}>
-                <Button>Signin</Button>
-              </Link>
+              <div className="flex items-center space-x-3">
+                <Link className="hover:underline" href={"/signin"}>
+                  Signin
+                </Link>
+                <Link href={"/signup"}>
+                  <Button className="cursor-pointer">Signup</Button>
+                </Link>
+              </div>
               <div onClick={handleOpenMenu} className="md:hidden">
                 {open ? <X /> : <Menu />}
               </div>

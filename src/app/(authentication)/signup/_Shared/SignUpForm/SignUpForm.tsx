@@ -5,14 +5,18 @@ import Link from "next/link";
 import { useState } from "react";
 import { GrGoogle } from "react-icons/gr";
 import ManualSignup from "./ManualSignup";
+import { Undo2 } from "lucide-react";
 
 export function SignUpForm() {
   //  condition change  to  button to manual signin
   const [isEmailAndPassword, setEmailAndPassword] = useState<boolean>(true);
 
   //  condition change  function
+  const handleToggleButtonToForm = () => {
+    setEmailAndPassword(!isEmailAndPassword);
+  };
 
-  const handleToggle = () => {
+  const handleToggleFormToButton = () => {
     setEmailAndPassword(!isEmailAndPassword);
   };
 
@@ -55,7 +59,15 @@ export function SignUpForm() {
       </div>
 
       {/* Secondary Actions */}
-      <div className="flex flex-col space-y-3 w-full">
+      <div className="flex flex-col space-y-3 w-full ">
+        {isEmailAndPassword && (
+          <div
+            onClick={handleToggleFormToButton}
+            className="flex items-center justify-end w-full cursor-pointer">
+            <Undo2 size={18} />
+          </div>
+        )}
+
         {isEmailAndPassword ? (
           <>
             <ManualSignup />{" "}
@@ -63,7 +75,7 @@ export function SignUpForm() {
         ) : (
           <>
             <Button
-              onClick={handleToggle}
+              onClick={handleToggleButtonToForm}
               size={"lg"}
               className="w-full text-sm"
               variant={"outline"}>

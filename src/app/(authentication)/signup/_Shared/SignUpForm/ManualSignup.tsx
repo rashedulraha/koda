@@ -7,7 +7,7 @@ const ManualSignup = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div className=" shadow-md w-full max-w-sm space-y-4">
+    <div className=" shadow-md w-full  space-y-4">
       {/* Email */}
       <div className="space-y-1">
         <Label>Email</Label>

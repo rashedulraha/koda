@@ -26,7 +26,7 @@ const SignInform = () => {
           <p className="text-muted-foreground">Login to Koda</p>
           <span className="text-muted-foreground">•</span>
           <p className="text-primary font-medium hover:underline">
-            <Link href={"/signup"}>Create account</Link>
+            <Link href={"/signup"}>Create your new koda workspace</Link>
           </p>
         </div>
       </div>

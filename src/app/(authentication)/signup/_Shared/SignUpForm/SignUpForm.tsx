@@ -2,9 +2,20 @@
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useState } from "react";
 import { GrGoogle } from "react-icons/gr";
+import ManualSignup from "./ManualSignup";
 
 export function SignUpForm() {
+  //  condition change  to  button to manual signin
+  const [isEmailAndPassword, setEmailAndPassword] = useState<boolean>(true);
+
+  //  condition change  function
+
+  const handleToggle = () => {
+    setEmailAndPassword(!isEmailAndPassword);
+  };
+
   return (
     <div className="flex flex-col space-y-8 items-center justify-center w-full max-w-sm mx-auto">
       {/* Header Section */}
@@ -16,7 +27,7 @@ export function SignUpForm() {
           <Link
             href="/signin"
             className="text-primary font-medium hover:underline transition-all">
-            Signin
+            Already have an account
           </Link>
         </div>
       </div>
@@ -45,15 +56,27 @@ export function SignUpForm() {
 
       {/* Secondary Actions */}
       <div className="flex flex-col space-y-3 w-full">
-        <Button size="lg" className="w-full" variant="outline">
-          Continue with Email
-        </Button>
-        <Button size="lg" className="w-full" variant="outline">
-          Continue with SAML SSO
-        </Button>
-        <Button size="lg" className="w-full" variant="outline">
-          Continue with Passkey
-        </Button>
+        {isEmailAndPassword ? (
+          <>
+            <ManualSignup />{" "}
+          </>
+        ) : (
+          <>
+            <Button
+              onClick={handleToggle}
+              size={"lg"}
+              className="w-full text-sm"
+              variant={"outline"}>
+              signin with email and password
+            </Button>
+            <Button size={"lg"} className="w-full text-sm" variant={"outline"}>
+              Continue with SAML SSO
+            </Button>
+            <Button size={"lg"} className="w-full text-sm" variant={"outline"}>
+              Continue with Passkey
+            </Button>
+          </>
+        )}
       </div>
 
       {/* Footer Note */}

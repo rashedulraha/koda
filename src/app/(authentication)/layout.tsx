@@ -1,4 +1,5 @@
 import Container from "@/components/Responsive/Container";
+
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
@@ -27,7 +28,7 @@ export default function AuthLayout({
       </header>
 
       <main className="flex-1 flex items-center justify-center">
-        {children}
+        <div>{children}</div>
       </main>
 
       <footer className="text-center text-sm text-gray-500 p-4">

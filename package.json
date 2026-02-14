@@ -19,7 +19,7 @@
     "@react-three/fiber": "^10.0.0-alpha.2",
     "@studio-freight/lenis": "^1.0.42",
     "aos": "^2.3.4",
-    "better-auth": "^1.4.17",
+    "better-auth": "^1.4.18",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "dotted-map": "^2.2.3",

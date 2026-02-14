@@ -47,10 +47,12 @@ const Navbar = () => {
 
               {desktopMobileMenuLink}
             </div>
-            <div className="flex items-center space-x-7 justify-end">
+            <div className="flex items-center space-x-3 md:space-x-7 justify-end">
               <ModeToggle />
               <div className="flex items-center space-x-3">
-                <Link className="hover:underline" href={"/signin"}>
+                <Link
+                  className="hover:underline hidden md:flex"
+                  href={"/signin"}>
                   Signin
                 </Link>
                 <Link href={"/signup"}>

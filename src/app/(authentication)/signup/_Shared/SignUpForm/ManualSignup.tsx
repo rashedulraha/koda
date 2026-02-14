@@ -32,7 +32,7 @@ const ManualSignup = () => {
       </div>
 
       {/* Register Button */}
-      <Button className="w-full">Signin</Button>
+      <Button className="w-full">Signup</Button>
     </div>
   );
 };

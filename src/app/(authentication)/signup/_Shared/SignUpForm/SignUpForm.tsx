@@ -69,10 +69,18 @@ export function SignUpForm() {
               variant={"outline"}>
               signin with email and password
             </Button>
-            <Button size={"lg"} className="w-full text-sm" variant={"outline"}>
+            <Button
+              disabled
+              size={"lg"}
+              className="w-full text-sm"
+              variant={"outline"}>
               Continue with SAML SSO
             </Button>
-            <Button size={"lg"} className="w-full text-sm" variant={"outline"}>
+            <Button
+              disabled
+              size={"lg"}
+              className="w-full text-sm"
+              variant={"outline"}>
               Continue with Passkey
             </Button>
           </>

@@ -7,7 +7,7 @@ import { GrGoogle } from "react-icons/gr";
 import ManualSignin from "./ManualSignin";
 
 const SignInform = () => {
-  const [isEmailAndPassword, setEmailAndPassword] = useState<boolean>(false);
+  const [isEmailAndPassword, setEmailAndPassword] = useState<boolean>(true);
 
   // handle isEmail and password form function
 

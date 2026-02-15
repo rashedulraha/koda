@@ -10,6 +10,7 @@ import RecourseNavLink from "./_Shared/RecourseNavLink/RecourseNavLink";
 import ProductNavLink from "./_Shared/ProductNavLink/ProductNavLink";
 import { MenuLink } from "./_NavLink/NavLink";
 import Link from "next/link";
+import { GrGithub } from "react-icons/gr";
 
 const desktopMobileMenuLink = (
   <>
@@ -24,8 +25,14 @@ const desktopMobileMenuLink = (
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  //? handle navbar mobile menu open and close
   const handleOpenMenu = () => {
     setOpen(!open);
+  };
+
+  //?  handle open github repository link
+  const handleOpenGithub = () => {
+    window.open("https://github.com/rashedulraha/koda");
   };
 
   return (
@@ -50,11 +57,12 @@ const Navbar = () => {
             <div className="flex items-center space-x-3 md:space-x-7 justify-end">
               <ModeToggle />
               <div className="flex items-center space-x-3">
-                <Link
-                  className="hover:underline hidden md:flex"
-                  href={"/signin"}>
-                  Signin
-                </Link>
+                <Button
+                  onClick={handleOpenGithub}
+                  variant={"ghost"}
+                  className="rounded-full">
+                  <GrGithub />
+                </Button>
                 <Link href={"/signup"}>
                   <Button className="cursor-pointer">Signup</Button>
                 </Link>

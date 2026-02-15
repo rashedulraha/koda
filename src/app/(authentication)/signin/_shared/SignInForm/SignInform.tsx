@@ -21,7 +21,7 @@ const SignInform = () => {
   };
 
   return (
-    <div className="flex flex-col space-y-8 items-center justify-center w-full max-w-md mx-auto p-4">
+    <div className="flex flex-col space-y-8 items-center justify-center w-full max-w-md mx-auto">
       <div className="flex items-center justify-center flex-col gap-3 text-center">
         <h2 className="font-bold text-2xl md:text-3xl tracking-tight text-foreground">
           Koda

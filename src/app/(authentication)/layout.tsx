@@ -17,7 +17,7 @@ export default function AuthLayout({
           <div className="flex items-center">
             <div className="absolute">
               <Link href={"/"} className="flex items-end gap-1">
-                <ArrowLeft /> <h2>Home</h2>
+                <ArrowLeft /> <h2 className="hidden md:inline">Home</h2>
               </Link>
             </div>
             <div className="flex-1 text-center">
@@ -28,7 +28,7 @@ export default function AuthLayout({
       </header>
 
       <main className="flex-1 flex items-center justify-center">
-        <div>{children}</div>
+        <div className="px-4">{children}</div>
       </main>
 
       <footer className="text-center text-sm text-gray-500 p-4">

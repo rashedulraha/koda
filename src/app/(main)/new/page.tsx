@@ -1,6 +1,11 @@
+import prisma from "@/lib/prisma";
 
+const New = async () => {
+  // check get data
 
-const New = () => {
+  const users = await prisma.user.findMany();
+  console.log(users);
+
   return (
     <div>
       <h1>New </h1>

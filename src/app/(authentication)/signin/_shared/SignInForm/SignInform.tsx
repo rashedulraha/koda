@@ -7,46 +7,42 @@ import { GrGoogle } from "react-icons/gr";
 import ManualSignin from "./ManualSignin";
 import { Undo2 } from "lucide-react";
 
-const SignInform = () => {
-  const [isEmailAndPassword, setEmailAndPassword] = useState<boolean>(true);
+const SignInForm = () => {
+  const [showManualForm, setShowManualForm] = useState(false);
 
-  // handle isEmail and password form function
-
-  const handleToggleFormToButton = () => {
-    setEmailAndPassword(!isEmailAndPassword);
-  };
-
-  const handleToggleButtonToForm = () => {
-    setEmailAndPassword(!isEmailAndPassword);
+  const toggleForm = () => {
+    setShowManualForm((prev) => !prev);
   };
 
   return (
     <div className="flex flex-col space-y-8 items-center justify-center w-full max-w-md mx-auto">
-      <div className="flex items-center justify-center flex-col gap-3 text-center">
-        <h2 className="font-bold text-2xl md:text-3xl tracking-tight text-foreground">
-          Koda
-        </h2>
+      {/* Header */}
+      <div className="flex flex-col gap-3 text-center">
+        <h2 className="font-bold text-2xl md:text-3xl tracking-tight">Koda</h2>
 
-        <div className="flex items-center gap-2 text-sm md:text-base">
+        <div className="flex items-center gap-2 text-sm md:text-base justify-center">
           <p className="text-muted-foreground">Login to Koda</p>
           <span className="text-muted-foreground">•</span>
-          <p className="text-primary font-medium hover:underline">
-            <Link href={"/signup"}>Create your new koda workspace</Link>
-          </p>
+          <Link
+            href="/signup"
+            className="text-primary font-medium hover:underline">
+            Create your new workspace
+          </Link>
         </div>
       </div>
 
-      <div className="w-full flex items-center justify-center flex-col space-y-2">
-        <Button size={"lg"} className="w-full flex gap-2 items-center">
+      {/* Google Button */}
+      <div className="w-full flex flex-col space-y-2">
+        <Button size="lg" className="w-full flex gap-2 items-center">
           <GrGoogle className="text-lg" />
           Continue with Google
         </Button>
-
         <p className="text-xs text-muted-foreground text-center">
           You used Google to login last time
         </p>
       </div>
 
+      {/* Divider */}
       <div className="relative w-full">
         <div className="absolute inset-0 flex items-center">
           <span className="w-full border-t border-muted" />
@@ -58,47 +54,38 @@ const SignInform = () => {
         </div>
       </div>
 
-      <div className="w-full flex items-center justify-center flex-col space-y-3">
-        {!isEmailAndPassword && (
-          <div
-            onClick={handleToggleFormToButton}
-            className="flex items-center justify-end w-full cursor-pointer">
+      {/* Toggle Section */}
+      <div className="w-full flex flex-col space-y-3">
+        {showManualForm && (
+          <div onClick={toggleForm} className="flex justify-end cursor-pointer">
             <Undo2 size={18} />
           </div>
         )}
-        {/* condition form */}
-        {isEmailAndPassword ? (
+
+        {!showManualForm ? (
           <>
             <Button
-              onClick={handleToggleButtonToForm}
-              size={"lg"}
-              className="w-full text-sm"
-              variant={"outline"}>
-              Create with email and password
+              onClick={toggleForm}
+              size="lg"
+              variant="outline"
+              className="w-full text-sm">
+              Continue with email and password
             </Button>
-            <Button
-              disabled
-              size={"lg"}
-              className="w-full text-sm"
-              variant={"outline"}>
+
+            <Button disabled size="lg" variant="outline" className="w-full">
               Continue with SAML SSO
             </Button>
-            <Button
-              disabled
-              size={"lg"}
-              className="w-full text-sm"
-              variant={"outline"}>
+
+            <Button disabled size="lg" variant="outline" className="w-full">
               Continue with Passkey
             </Button>
           </>
         ) : (
-          <>
-            <ManualSignin />
-          </>
+          <ManualSignin />
         )}
       </div>
 
-      <p className="text-[12px] text-center text-muted-foreground px-8">
+      <p className="text-xs text-center text-muted-foreground px-8">
         By clicking continue, you agree to our Terms of Service and Privacy
         Policy.
       </p>
@@ -106,4 +93,4 @@ const SignInform = () => {
   );
 };
 
-export default SignInform;
+export default SignInForm;

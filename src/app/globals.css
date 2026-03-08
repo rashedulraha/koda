@@ -162,6 +162,8 @@
   }
 }
 
+/* new navbar nav color */
+
 /* remove scroll bar */
 @layer utilities {
   .no-scrollbar::-webkit-scrollbar {

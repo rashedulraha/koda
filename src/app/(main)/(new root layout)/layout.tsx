@@ -51,7 +51,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             <ButtonGroup>
               <Input id="input-button-group" placeholder="Type to search..." />
               <Button variant="outline">Search</Button>
-              <Button variant="outline">
+              <Button className="cursor-pointer border-none">
                 <Wifi />
               </Button>
             </ButtonGroup>

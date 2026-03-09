@@ -10,3 +10,11 @@ export type cardOneTypes = {
   image: string | StaticImageData;
   description: string;
 };
+
+export type updateDataTypes = {
+  id: number;
+  date: string;
+  title: string;
+  image: string | StaticImageData;
+  description: string;
+};

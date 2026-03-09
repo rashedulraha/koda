@@ -4,9 +4,11 @@ import CardOne from "../_shared/card/cardOne";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
-import { allData } from "../data/allData";
+import { allData, updatesData } from "../data/allData";
+import UpdateCard from "../_shared/card/UpdateCard";
 
 const allArrayOfObjectData = allData;
+const updateData = updatesData;
 
 const newAllArrayOfObject = allArrayOfObjectData.slice(0, 4);
 
@@ -39,7 +41,11 @@ const New = () => {
             </Link>
           </div>
           {/* change log main card section */}
-          <div className="my-5 md:my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8"></div>
+          <div className="my-5 md:my-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            {updateData.map((singleData) => (
+              <UpdateCard key={singleData.id} data={singleData} />
+            ))}
+          </div>
         </div>
 
         {/*  new page load more button  */}

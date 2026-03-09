@@ -86,7 +86,7 @@ export const allData = [
 ];
 
 // update data
-export const updates = [
+export const updatesData = [
   {
     id: 1,
     date: "Feb 26, 2026",
@@ -111,15 +111,9 @@ export const updates = [
       "We've expanded Linear's MCP server with support for initiatives, project milestones, and product updates. This allows teams to manage complex product workflows and align development with long-term goals.",
     image: image3,
   },
+
   {
     id: 4,
-    date: "Jan 28, 2026",
-    title: "Time in status",
-    description:
-      "Time spent in individual statuses is now tracked and available throughout Linear. Hover over any issue's status indicator to see how long it has been in each stage of the workflow.",
-  },
-  {
-    id: 5,
     date: "Jan 4, 2026",
     title: "Improved project insights",
     description:

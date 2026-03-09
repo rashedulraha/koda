@@ -1,3 +1,5 @@
+import img1 from "../_shared/img/howCursor.avif";
+
 const allData = [
   {
     id: 1,
@@ -5,7 +7,7 @@ const allData = [
     date: "Jan 27, 2026",
     title: "How Dandelion Chocolate scales craft",
     author: "Karri Saarinen",
-    image: "/images/dandelion-chocolate.png",
+    image: img1,
     description:
       "Dandelion Chocolate is a bean-to-bar chocolate maker based in San Francisco. As they scaled, the challenge was preserving their craft while building systems for growth.",
   },

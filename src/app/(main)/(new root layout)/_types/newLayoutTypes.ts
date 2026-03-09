@@ -1,3 +1,5 @@
+import { StaticImageData } from "next/image";
+
 //  card one types
 export type cardOneTypes = {
   id: number;
@@ -5,6 +7,6 @@ export type cardOneTypes = {
   date: string;
   title: string;
   author: string;
-  image: string;
+  image: string | StaticImageData;
   description: string;
 };

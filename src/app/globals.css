@@ -174,3 +174,12 @@
     scrollbar-width: none; /* Firefox */
   }
 }
+
+/* remove scroll var */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

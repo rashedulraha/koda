@@ -18,3 +18,21 @@ export type updateDataTypes = {
   image: string | StaticImageData;
   description: string;
 };
+
+export type NewArticleTypes = {
+  id: number;
+  date: string;
+  title: string;
+  image: string | StaticImageData;
+  author: string;
+};
+
+// Press  content types
+
+export type PressTypes = {
+  id: number;
+  date: string;
+  title: string;
+  image: string | StaticImageData;
+  author: string;
+};

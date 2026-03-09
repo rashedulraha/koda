@@ -4,13 +4,29 @@ import CardOne from "../_shared/card/cardOne";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
-import { allData, updatesData } from "../data/allData";
+import {
+  allData,
+  Articles,
+  PressImgAndContent,
+  updatesData,
+} from "../data/allData";
 import UpdateCard from "../_shared/card/UpdateCard";
+import NewArticle from "../_shared/card/NewArtile";
 
+// new container  fist img and contain
 const allArrayOfObjectData = allData;
 const updateData = updatesData;
 
+//  new container second img and contain
+const allArraySecond = allData;
+const allSecondData = allArraySecond.slice(3, 8);
 const newAllArrayOfObject = allArrayOfObjectData.slice(0, 4);
+
+//  new container  article content
+const newArticle = Articles;
+
+//  press content
+const pressContent = PressImgAndContent;
 
 const New = () => {
   return (
@@ -41,11 +57,37 @@ const New = () => {
             </Link>
           </div>
           {/* change log main card section */}
-          <div className="my-5 md:my-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <div className="my-5 md:my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8">
             {updateData.map((singleData) => (
               <UpdateCard key={singleData.id} data={singleData} />
             ))}
           </div>
+          <hr className="my-10 md:my-14" />
+        </div>
+
+        {/* main second img container */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 ">
+          {allSecondData.map((singleObject) => (
+            <CardOne key={singleObject.id} data={singleObject} />
+          ))}
+
+          {/* bottom button  */}
+        </div>
+
+        <hr className="my-10 md:my-14" />
+
+        <div className="my-5 md:my-8 grid grid-cols-1 md:grid-cols-3  gap-5 md:gap-8">
+          {pressContent.map((singleData) => (
+            <NewArticle key={singleData.id} data={singleData} />
+          ))}
+        </div>
+        <hr className="my-10 md:my-14" />
+
+        {/*   new web page article page content */}
+        <div className="my-5 md:my-8 grid grid-cols-1 md:grid-cols-3  gap-5 md:gap-8">
+          {newArticle.map((singleData) => (
+            <NewArticle key={singleData.id} data={singleData} />
+          ))}
         </div>
 
         {/*  new page load more button  */}

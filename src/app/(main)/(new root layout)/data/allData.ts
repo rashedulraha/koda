@@ -12,6 +12,20 @@ import image2 from "../_shared/img/advanced.avif";
 import image3 from "../_shared/img/Linear_mcp.avif";
 import image4 from "../_shared/img/time_in_status.avif";
 
+//  articles img
+import articleImg1 from "../_shared/img/qualitywednesdays.avif";
+import articleImg2 from "../_shared/img/ourApproach.avif";
+import articleImg3 from "../_shared/img/insideMercury's.avif";
+import articleImg4 from "../_shared/img/BuildingOurWay.avif";
+import articleImg5 from "../_shared/img/whyIsQuality.avif";
+import articleImg6 from "../_shared/img/design_is_more.avif";
+
+//   press  img
+import PressImg1 from "../_shared/img/whyTheceo.avif";
+import PressImg2 from "../_shared/img/hwoLinearGrows.avif";
+import PressImg3 from "../_shared/img/craftAndquality.avif";
+
+//   all important data in new web page
 export const allData = [
   {
     id: 1,
@@ -119,5 +133,79 @@ export const updatesData = [
     description:
       "Get better visibility into project progress with enhanced insights. Teams can now review timelines, blockers, and delivery trends directly from their project dashboard.",
     image: image4,
+  },
+];
+
+//  all articles
+export const Articles = [
+  {
+    id: 1,
+    title:
+      "Quality Wednesdays: How we trained our team to see what doesn’t work",
+    author: "Tuomas Artman",
+    date: "Aug 13, 2025",
+    image: articleImg1,
+  },
+  {
+    id: 2,
+    title: "Our approach to building the Agent Interaction SDK",
+    author: "Leela Senthil Nathan",
+    date: "Aug 01, 2025",
+    image: articleImg2,
+  },
+  {
+    id: 3,
+    title: "Inside Mercury’s six-month journey building with AI agents",
+    author: "Kevin Hartnett",
+    date: "Jul 16, 2025",
+    image: articleImg3,
+  },
+  {
+    id: 4,
+    title: "Building our way: Announcing our Series C",
+    author: "Karri Saarinen",
+    date: "Jun 10, 2025",
+    image: articleImg4,
+  },
+  {
+    id: 5,
+    title: "Why is quality so rare?",
+    author: "Karri Saarinen",
+    date: "May 27, 2025",
+    image: articleImg5,
+  },
+  {
+    id: 6,
+    title: "Design for the AI age",
+    author: "Karri Saarinen",
+    date: "Apr 07, 2025",
+    image: articleImg6,
+  },
+];
+
+//   press content
+
+export const PressImgAndContent = [
+  {
+    id: 1,
+    title:
+      "Why the CEO of a $1 Billion Startup Rejects Silicon Valley’s Hustle Culture",
+    author: "Entrepreneur",
+    date: "Dec 10, 2025",
+    image: PressImg1,
+  },
+  {
+    id: 2,
+    title: "How Linear Grows",
+    author: "Product Growth",
+    date: "Nov 20, 2025",
+    image: PressImg2,
+  },
+  {
+    id: 3,
+    title: "Craft and quality through speed and scale (and agents)",
+    author: "Stack Overflow",
+    date: "Oct 28, 2025",
+    image: PressImg3,
   },
 ];

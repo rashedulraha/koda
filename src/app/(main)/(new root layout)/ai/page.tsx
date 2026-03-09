@@ -2,8 +2,10 @@ import React from "react";
 
 const Ai = () => {
   return (
-    <div>
-      <h1>Hello ai</h1>
+    <div className="flex items-center justify-center my-10">
+      <h1 className="text-2xl font-semibold text-foreground capitalize ">
+        coming soon
+      </h1>
     </div>
   );
 };

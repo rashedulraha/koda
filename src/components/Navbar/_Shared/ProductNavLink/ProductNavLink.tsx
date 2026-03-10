@@ -110,7 +110,7 @@ const ProductNavLink = () => {
                   </span>
                 </div>
 
-                <span className="text-sm text-sidebar-primary  font-medium">
+                <span className="text-sm text-chart-1 font-medium">
                   Changelog
                 </span>
               </div>

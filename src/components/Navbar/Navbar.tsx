@@ -57,15 +57,15 @@ const Navbar = () => {
             <div className="flex items-center space-x-3 md:space-x-7 justify-end">
               <ModeToggle />
               <div className="flex items-center space-x-3">
+                <Link href={"/signup"}>
+                  <Button className="cursor-pointer rounded">Signup</Button>
+                </Link>
                 <Button
+                  className="cursor-pointer"
                   onClick={handleOpenGithub}
-                  variant={"ghost"}
-                  className="rounded-full">
+                  variant={"outline"}>
                   <GrGithub />
                 </Button>
-                <Link href={"/signup"}>
-                  <Button className="cursor-pointer">Signup</Button>
-                </Link>
               </div>
               <div onClick={handleOpenMenu} className="md:hidden">
                 {open ? <X /> : <Menu />}

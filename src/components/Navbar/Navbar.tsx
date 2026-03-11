@@ -77,7 +77,7 @@ const Navbar = () => {
 
       {/* mobile menu section */}
       <div
-        className="md:hidden w-full  bg-card absolute z-10 top-15"
+        className="md:hidden w-full bg-card absolute z-10 top-15"
         data-aos="fade-down">
         <Container>
           {open && <div className="py-5">{desktopMobileMenuLink}</div>}

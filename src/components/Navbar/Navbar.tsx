@@ -64,7 +64,7 @@ const Navbar = () => {
                   <GrGithub />
                 </Button>
                 <Link href={"/signup"}>
-                  <Button className="cursor-pointer">Signup</Button>
+                  <Button className="cursor-pointer rounded">Signup</Button>
                 </Link>
               </div>
               <div onClick={handleOpenMenu} className="md:hidden">

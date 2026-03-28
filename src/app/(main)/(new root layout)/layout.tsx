@@ -65,7 +65,7 @@ const SearchBar = () => {
           <Button
             variant="default"
             size="icon"
-            className="cursor-pointer border hidden sm:flex"
+            className="cursor-pointer border hidden sm:flex rounded-full"
             aria-label="Connect" // Added for accessibility
           >
             <Wifi className="h-4 w-4" />

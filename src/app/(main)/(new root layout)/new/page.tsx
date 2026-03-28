@@ -92,7 +92,9 @@ const New = () => {
 
         {/*  new page load more button  */}
         <div className="w-full flex items-center justify-center">
-          <Button className="mt-5 md:mt-10 cursor-pointer" variant={"outline"}>
+          <Button
+            className="mt-5 md:mt-10 cursor-pointer rounded"
+            variant={"outline"}>
             Load more
           </Button>
         </div>

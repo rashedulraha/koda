@@ -109,9 +109,7 @@ export function BackgroundBeamsDemo() {
                 variant="outline"
                 className="group flex items-center gap-2 border-2 px-6 transition-all duration-300 hover:bg-secondary/50 hover:-translate-y-0.5">
                 <span className="flex items-center gap-1">
-                  <span className="rounded-full bg-linear-to-r from-blue-500 to-purple-500 px-2 py-0.5 text-xs font-bold text-white">
-                    New
-                  </span>
+                  <span className="rounded-full font-bold text-ring">New</span>
                   <span className="font-medium">Koda agent for Slack</span>
                 </span>
                 <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

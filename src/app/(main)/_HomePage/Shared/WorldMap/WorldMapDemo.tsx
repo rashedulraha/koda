@@ -42,7 +42,7 @@ export function WorldMapDemo() {
 
       <div className="mt-8">
         <WorldMap
-          lineColor="#6344F5"
+          lineColor="var(--primary)"
           dots={[
             {
               start: { lat: 64.2008, lng: -149.4937 },

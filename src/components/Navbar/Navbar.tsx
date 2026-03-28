@@ -67,7 +67,9 @@ const Navbar = () => {
                   <span>1.4k</span>
                 </Button>
                 <Link href={"/signup"}>
-                  <Button className="cursor-pointer rounded">Signup</Button>
+                  <Button size={"sm"} className="cursor-pointer rounded">
+                    Signup
+                  </Button>
                 </Link>
               </div>
               <div onClick={handleOpenMenu} className="md:hidden">

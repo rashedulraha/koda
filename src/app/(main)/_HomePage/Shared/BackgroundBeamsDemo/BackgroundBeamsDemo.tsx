@@ -34,108 +34,30 @@ import {
   Lock,
 } from "lucide-react";
 import { TextGenerateEffectDemo } from "../TextGenerateEffectDemo/TextGenerateEffectDemo";
+import feature from "../Data/features";
+import testimonial from "../Data/testimonials";
+import integration from "../Data/integrations";
+import companies from "../Data/companie";
 
 export function BackgroundBeamsDemo() {
   const [activeTab, setActiveTab] = useState("features");
 
-  const features = [
-    {
-      icon: <Zap className="h-6 w-6" />,
-      title: "AI-Powered Development",
-      description:
-        "Leverage AI to accelerate your development workflow with intelligent code suggestions and automated testing.",
-      badge: "Popular",
-    },
-    {
-      icon: <GitBranch className="h-6 w-6" />,
-      title: "Seamless Integration",
-      description:
-        "Connect with your favorite tools and platforms with our extensive library of integrations.",
-      badge: null,
-    },
-    {
-      icon: <Shield className="h-6 w-6" />,
-      title: "Enterprise Security",
-      description:
-        "Bank-level encryption and security protocols to keep your code and data safe.",
-      badge: "Secure",
-    },
-    {
-      icon: <Rocket className="h-6 w-6" />,
-      title: "Rapid Deployment",
-      description:
-        "Deploy your applications in seconds with our optimized CI/CD pipelines.",
-      badge: null,
-    },
-    {
-      icon: <BarChart3 className="h-6 w-6" />,
-      title: "Advanced Analytics",
-      description:
-        "Gain insights into your development process with detailed analytics and reporting.",
-      badge: "Advanced",
-    },
-    {
-      icon: <MessageSquare className="h-6 w-6" />,
-      title: "Team Collaboration",
-      description:
-        "Work together efficiently with real-time collaboration tools and communication features.",
-      badge: null,
-    },
-  ];
+  // ! features
+  const features = feature;
+  // ! testimonials
+  const testimonials = testimonial;
+  // ! integrations
+  const integrations = integration;
+  // ! companied
+  const companied = companies;
 
-  const testimonials = [
-    {
-      name: "Alex Johnson",
-      role: "Lead Developer at TechCorp",
-      content:
-        "Koda has transformed how our team builds software. The AI features have cut our development time in half.",
-      avatar: "AJ",
-      rating: 5,
-    },
-    {
-      name: "Sarah Chen",
-      role: "Product Manager at InnovateCo",
-      content:
-        "The best project management tool we've ever used. It's intuitive, powerful, and our team loves it.",
-      avatar: "SC",
-      rating: 5,
-    },
-    {
-      name: "Michael Rodriguez",
-      role: "CTO at StartupX",
-      content:
-        "From sprint planning to deployment, Koda streamlines our entire workflow. Absolutely essential for our team.",
-      avatar: "MR",
-      rating: 5,
-    },
-  ];
-
-  const integrations = [
-    { name: "GitHub", icon: <Code className="h-5 w-5" /> },
-    { name: "GitLab", icon: <GitBranch className="h-5 w-5" /> },
-    { name: "AWS", icon: <Cloud className="h-5 w-5" /> },
-    { name: "Docker", icon: <Database className="h-5 w-5" /> },
-    { name: "Slack", icon: <MessageSquare className="h-5 w-5" /> },
-    { name: "Jira", icon: <Settings className="h-5 w-5" /> },
-    { name: "Azure", icon: <Cloud className="h-5 w-5" /> },
-    { name: "Vault", icon: <Lock className="h-5 w-5" /> },
-  ];
-
-  const companies = [
-    "TechCorp",
-    "InnovateCo",
-    "StartupX",
-    "DevStudio",
-    "CodeLab",
-    "AppWorks",
-  ];
-
+  //  main content
   return (
     <div className="relative flex flex-col overflow-hidden bg-background text-foreground min-h-screen">
       <BackgroundBeams />
 
-      <Container className="relative z-10 flex-grow">
-        <div className="flex flex-col items-center justify-center min-h-screen py-20">
+      <Container className="relative z-10 grow">
+        <div className="flex flex-col items-center justify-center min-h-screen py-5 md:my-10">
           {/* Badge */}
           <div className="flex justify-center mb-6">
             <Badge
@@ -158,7 +80,7 @@ export function BackgroundBeamsDemo() {
             </p>
 
             {/* Feature Pills */}
-            <div className="mt-8 flex flex-wrap justify-center gap-3 text-sm">
+            <div className="mt-8 flex flex-wrap  justify-center gap-3 text-sm">
               <span className="inline-flex items-center gap-1.5 rounded-full border bg-secondary/50 px-4 py-2">
                 <Zap size={16} className="text-primary" />
                 <span>AI Issue tracking</span>
@@ -180,14 +102,14 @@ export function BackgroundBeamsDemo() {
                   Get started free
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </span>
-                <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-500 group-hover:translate-x-full" />
+                <div className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/20 to-transparent transition-transform duration-500 group-hover:translate-x-full" />
               </Button>
 
               <Button
                 variant="outline"
                 className="group flex items-center gap-2 border-2 px-6 transition-all duration-300 hover:bg-secondary/50 hover:-translate-y-0.5">
                 <span className="flex items-center gap-1">
-                  <span className="rounded-full bg-gradient-to-r from-blue-500 to-purple-500 px-2 py-0.5 text-xs font-bold text-white">
+                  <span className="rounded-full bg-linear-to-r from-blue-500 to-purple-500 px-2 py-0.5 text-xs font-bold text-white">
                     New
                   </span>
                   <span className="font-medium">Koda agent for Slack</span>
@@ -213,7 +135,7 @@ export function BackgroundBeamsDemo() {
             </div>
 
             <div className="flex flex-wrap justify-center gap-8 opacity-60">
-              {companies.map((company, index) => (
+              {companied.map((company, index) => (
                 <div
                   key={index}
                   className="text-sm font-medium text-muted-foreground flex items-center gap-2">
@@ -353,29 +275,6 @@ export function BackgroundBeamsDemo() {
                 </div>
               </TabsContent>
             </Tabs>
-          </div>
-
-          {/* CTA Section */}
-          <div className="mt-16 p-8 rounded-2xl bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20 backdrop-blur-sm">
-            <div className="text-center max-w-2xl mx-auto">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">
-                Ready to transform your development workflow?
-              </h2>
-              <p className="text-muted-foreground mb-6">
-                Join thousands of developers who are already building better
-                products with Koda.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="group">
-                  Start free trial
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Button>
-                <Button variant="outline" className="group">
-                  Schedule a demo
-                  <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Button>
-              </div>
-            </div>
           </div>
         </div>
       </Container>

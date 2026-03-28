@@ -16,12 +16,8 @@ const HomePage = () => {
 
           <Container>
             <WorldMapDemo />
-
             <Second />
-
-            <div>
-              <ModernProduct />
-            </div>
+            <ModernProduct />
           </Container>
         </div>
       </div>

@@ -1,6 +1,7 @@
+// TextGenerateEffect.tsx
 "use client";
 import { useEffect } from "react";
-import { motion, stagger, useAnimate } from "motion/react";
+import { motion, stagger, useAnimate } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export const TextGenerateEffect = ({
@@ -16,28 +17,31 @@ export const TextGenerateEffect = ({
 }) => {
   const [scope, animate] = useAnimate();
   const wordsArray = words.split(" ");
+
   useEffect(() => {
-    animate(
-      "span",
-      {
-        opacity: 1,
-        filter: filter ? "blur(0px)" : "none",
-      },
-      {
-        duration: duration ? duration : 1,
-        delay: stagger(0.04),
-      },
-    );
-  }, [animate, duration, filter]);
+    if (scope.current) {
+      animate(
+        "span",
+        {
+          opacity: 1,
+          filter: filter ? "blur(0px)" : "none",
+        },
+        {
+          duration: duration ? duration : 1,
+          delay: stagger(0.04),
+        },
+      );
+    }
+  }, [animate, duration, filter, scope]);
 
   const renderWords = () => {
     return (
-      <motion.div ref={scope}>
+      <motion.div ref={scope} className="flex flex-wrap justify-center">
         {wordsArray.map((word, idx) => {
           return (
             <motion.span
               key={word + idx}
-              className="text-foreground opacity-0"
+              className="text-foreground opacity-0 inline-block"
               style={{
                 filter: filter ? "blur(10px)" : "none",
               }}>
@@ -52,7 +56,7 @@ export const TextGenerateEffect = ({
   return (
     <div className={cn("font-bold", className)}>
       <div className="mt-4">
-        <div className="text-2xl text-left sm:text-3xl md:text-5xl lg:text-6xl font-medium md:leading-17 text-wrap bg-clip-text text-transparent bg-linear-to-b from-foreground to-muted-foreground/60 leading-snug tracking-wide">
+        <div className="text-4xl text-center sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
           {renderWords()}
         </div>
       </div>

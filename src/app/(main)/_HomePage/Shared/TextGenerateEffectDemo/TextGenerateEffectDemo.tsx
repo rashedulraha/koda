@@ -1,3 +1,4 @@
+// TextGenerateEffectDemo.tsx
 "use client";
 
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";

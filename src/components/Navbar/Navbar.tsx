@@ -40,12 +40,13 @@ const Navbar = () => {
       <div className="py-3 border-b  sticky top-0 z-999">
         <Container>
           <div className="flex items-center justify-between">
-            <div>
+            <div className="flex-1">
               <h2 className="font-bold  text-2xl">
                 <Link href="/">Koda</Link>
               </h2>
             </div>
-            <div className="flex-2  items-center justify-center text-muted-foreground gap-1 hidden md:flex">
+
+            <div className="flex-1  items-center justify-center text-muted-foreground gap-1 hidden md:flex">
               {/* menu bar products section */}
               <ProductNavLink />
 
@@ -54,14 +55,16 @@ const Navbar = () => {
 
               {desktopMobileMenuLink}
             </div>
-            <div className="flex items-center space-x-3 md:space-x-7 justify-end">
+
+            <div className="flex flex-1 items-center space-x-3 md:space-x-7 justify-end">
               <ModeToggle />
               <div className="flex items-center space-x-3">
                 <Button
                   onClick={handleOpenGithub}
                   variant={"ghost"}
-                  className="rounded-full">
+                  className="rounded-full hover:border border cursor-pointer ">
                   <GrGithub />
+                  <span>1.4k</span>
                 </Button>
                 <Link href={"/signup"}>
                   <Button className="cursor-pointer rounded">Signup</Button>

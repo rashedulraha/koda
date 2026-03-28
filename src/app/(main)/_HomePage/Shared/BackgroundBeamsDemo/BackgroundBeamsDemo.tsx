@@ -1,59 +1,384 @@
+// BackgroundBeamsDemo.tsx
 "use client";
 
+import { useState } from "react";
 import Container from "@/components/Responsive/Container";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { Button } from "@/components/ui/button";
-import { ChevronRight, Zap, Layers, Palette, Rocket } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  ChevronRight,
+  Zap,
+  Layers,
+  Users,
+  ArrowRight,
+  Star,
+  Sparkles,
+  Code,
+  GitBranch,
+  Shield,
+  Rocket,
+  BarChart3,
+  MessageSquare,
+  Settings,
+  Database,
+  Cloud,
+  Lock,
+} from "lucide-react";
 import { TextGenerateEffectDemo } from "../TextGenerateEffectDemo/TextGenerateEffectDemo";
 
 export function BackgroundBeamsDemo() {
+  const [activeTab, setActiveTab] = useState("features");
+
+  const features = [
+    {
+      icon: <Zap className="h-6 w-6" />,
+      title: "AI-Powered Development",
+      description:
+        "Leverage AI to accelerate your development workflow with intelligent code suggestions and automated testing.",
+      badge: "Popular",
+    },
+    {
+      icon: <GitBranch className="h-6 w-6" />,
+      title: "Seamless Integration",
+      description:
+        "Connect with your favorite tools and platforms with our extensive library of integrations.",
+      badge: null,
+    },
+    {
+      icon: <Shield className="h-6 w-6" />,
+      title: "Enterprise Security",
+      description:
+        "Bank-level encryption and security protocols to keep your code and data safe.",
+      badge: "Secure",
+    },
+    {
+      icon: <Rocket className="h-6 w-6" />,
+      title: "Rapid Deployment",
+      description:
+        "Deploy your applications in seconds with our optimized CI/CD pipelines.",
+      badge: null,
+    },
+    {
+      icon: <BarChart3 className="h-6 w-6" />,
+      title: "Advanced Analytics",
+      description:
+        "Gain insights into your development process with detailed analytics and reporting.",
+      badge: "Advanced",
+    },
+    {
+      icon: <MessageSquare className="h-6 w-6" />,
+      title: "Team Collaboration",
+      description:
+        "Work together efficiently with real-time collaboration tools and communication features.",
+      badge: null,
+    },
+  ];
+
+  const testimonials = [
+    {
+      name: "Alex Johnson",
+      role: "Lead Developer at TechCorp",
+      content:
+        "Koda has transformed how our team builds software. The AI features have cut our development time in half.",
+      avatar: "AJ",
+      rating: 5,
+    },
+    {
+      name: "Sarah Chen",
+      role: "Product Manager at InnovateCo",
+      content:
+        "The best project management tool we've ever used. It's intuitive, powerful, and our team loves it.",
+      avatar: "SC",
+      rating: 5,
+    },
+    {
+      name: "Michael Rodriguez",
+      role: "CTO at StartupX",
+      content:
+        "From sprint planning to deployment, Koda streamlines our entire workflow. Absolutely essential for our team.",
+      avatar: "MR",
+      rating: 5,
+    },
+  ];
+
+  const integrations = [
+    { name: "GitHub", icon: <Code className="h-5 w-5" /> },
+    { name: "GitLab", icon: <GitBranch className="h-5 w-5" /> },
+    { name: "AWS", icon: <Cloud className="h-5 w-5" /> },
+    { name: "Docker", icon: <Database className="h-5 w-5" /> },
+    { name: "Slack", icon: <MessageSquare className="h-5 w-5" /> },
+    { name: "Jira", icon: <Settings className="h-5 w-5" /> },
+    { name: "Azure", icon: <Cloud className="h-5 w-5" /> },
+    { name: "Vault", icon: <Lock className="h-5 w-5" /> },
+  ];
+
+  const companies = [
+    "TechCorp",
+    "InnovateCo",
+    "StartupX",
+    "DevStudio",
+    "CodeLab",
+    "AppWorks",
+  ];
+
   return (
-    <div className="relative flex flex-col overflow-hidden bg-background py-10 md:py-14 lg:py-20">
-      <Container>
-        <div className="relative z-10">
-          <TextGenerateEffectDemo />
+    <div className="relative flex flex-col overflow-hidden bg-background text-foreground min-h-screen">
+      <BackgroundBeams />
 
-          <p className="mt-3 md:mt-5 text-sm md:text-base md:leading-8 text-muted-foreground max-w-2xl">
-            Meet the system for modern software development. <br />
-            Streamline issues, projects, and product roadmaps.
-          </p>
-
-          <div className="mt-6 flex flex-wrap gap-3 text-xs md:text-sm text-muted-foreground">
-            <span className="flex items-center gap-1.5 rounded-full border px-3 py-1 bg-secondary/30">
-              <Zap size={14} className="text-yellow-500" /> Fast setup
-            </span>
-            <span className="flex items-center gap-1.5 rounded-full border px-3 py-1 bg-secondary/30">
-              <Layers size={14} className="text-blue-500" /> Modular
-            </span>
-            <span className="flex items-center gap-1.5 rounded-full border px-3 py-1 bg-secondary/30">
-              <Palette size={14} className="text-purple-500" /> Custom UI
-            </span>
-            <span className="flex items-center gap-1.5 rounded-full border px-3 py-1 bg-secondary/30">
-              <Rocket size={14} className="text-orange-500" /> Production ready
-            </span>
-          </div>
-
-          <div className="mt-8 flex flex-wrap gap-4">
-            <Button className="px-8 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
-              Get started free
-            </Button>
-
-            <Button
+      <Container className="relative z-10 flex-grow">
+        <div className="flex flex-col items-center justify-center min-h-screen py-20">
+          {/* Badge */}
+          <div className="flex justify-center mb-6">
+            <Badge
               variant="outline"
-              className="flex items-center gap-2 transition-all duration-300 hover:bg-secondary/50 hover:-translate-y-0.5">
-              <span className="font-bold text-blue-500">New : </span>
-              Koda agent for Slack
-              <ChevronRight className="h-4 w-4" />
-            </Button>
+              className="bg-primary/10 text-primary border-primary/20 px-3 py-1 text-xs font-medium">
+              <Sparkles className="w-3 h-3 mr-1" />
+              Version 2.0 is here
+            </Badge>
           </div>
 
-          <p className="mt-8 text-xs text-muted-foreground opacity-80">
-            Trusted by 1,000+ developers · Open source · MIT Licensed
-          </p>
+          {/* Hero Section */}
+          <div className="max-w-4xl mx-auto text-center">
+            <TextGenerateEffectDemo />
+
+            <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-relaxed text-muted-foreground">
+              Meet the system for modern software development.
+              <br className="hidden sm:block" />
+              Streamline issues, projects, and product roadmaps with AI-powered
+              workflows.
+            </p>
+
+            {/* Feature Pills */}
+            <div className="mt-8 flex flex-wrap justify-center gap-3 text-sm">
+              <span className="inline-flex items-center gap-1.5 rounded-full border bg-secondary/50 px-4 py-2">
+                <Zap size={16} className="text-primary" />
+                <span>AI Issue tracking</span>
+              </span>
+              <span className="inline-flex items-center gap-1.5 rounded-full border bg-secondary/50 px-4 py-2">
+                <Layers size={16} className="text-primary" />
+                <span>Smart sprint planning</span>
+              </span>
+              <span className="inline-flex items-center gap-1.5 rounded-full border bg-secondary/50 px-4 py-2">
+                <Users size={16} className="text-primary" />
+                <span>Team workflows</span>
+              </span>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+              <Button className="group relative overflow-hidden bg-primary px-8 shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
+                <span className="relative z-10 flex items-center gap-2 font-semibold">
+                  Get started free
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </span>
+                <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-500 group-hover:translate-x-full" />
+              </Button>
+
+              <Button
+                variant="outline"
+                className="group flex items-center gap-2 border-2 px-6 transition-all duration-300 hover:bg-secondary/50 hover:-translate-y-0.5">
+                <span className="flex items-center gap-1">
+                  <span className="rounded-full bg-gradient-to-r from-blue-500 to-purple-500 px-2 py-0.5 text-xs font-bold text-white">
+                    New
+                  </span>
+                  <span className="font-medium">Koda agent for Slack</span>
+                </span>
+                <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </div>
+
+            <p className="mt-8 text-sm text-center text-muted-foreground opacity-80">
+              Trusted by 1,000+ developers · Open source · MIT Licensed
+            </p>
+          </div>
+
+          {/* Social Proof Section */}
+          <div className="mt-16 w-full max-w-4xl">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl font-semibold mb-2">
+                Join developers from leading companies
+              </h2>
+              <p className="text-muted-foreground">
+                Building the future of software development
+              </p>
+            </div>
+
+            <div className="flex flex-wrap justify-center gap-8 opacity-60">
+              {companies.map((company, index) => (
+                <div
+                  key={index}
+                  className="text-sm font-medium text-muted-foreground flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-primary"></div>
+                  {company}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Features/Integrations/Testimonials Tabs */}
+          <div className="mt-16 w-full max-w-5xl mx-auto">
+            <Tabs
+              value={activeTab}
+              onValueChange={setActiveTab}
+              className="w-full">
+              <TabsList className="grid w-full grid-cols-3 mb-8 bg-card/50 backdrop-blur-sm border border-border/50">
+                <TabsTrigger
+                  value="features"
+                  className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                  Features
+                </TabsTrigger>
+                <TabsTrigger
+                  value="integrations"
+                  className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                  Integrations
+                </TabsTrigger>
+                <TabsTrigger
+                  value="testimonials"
+                  className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                  Testimonials
+                </TabsTrigger>
+              </TabsList>
+
+              <TabsContent value="features" className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {features.map((feature, index) => (
+                    <Card
+                      key={index}
+                      className="border-border/50 bg-card/30 backdrop-blur-sm hover:bg-card/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                      <CardHeader>
+                        <div className="flex items-center justify-between">
+                          <div className="p-2 rounded-md bg-primary/10 text-primary">
+                            {feature.icon}
+                          </div>
+                          {feature.badge && (
+                            <Badge
+                              variant="secondary"
+                              className="text-xs bg-primary/10 text-primary border-primary/20">
+                              {feature.badge}
+                            </Badge>
+                          )}
+                        </div>
+                        <CardTitle className="text-lg">
+                          {feature.title}
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <CardDescription className="text-sm">
+                          {feature.description}
+                        </CardDescription>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </TabsContent>
+
+              <TabsContent value="integrations" className="space-y-4">
+                <Card className="border-border/50 bg-card/30 backdrop-blur-sm">
+                  <CardHeader>
+                    <CardTitle className="text-xl">
+                      Connect with your favorite tools
+                    </CardTitle>
+                    <CardDescription>
+                      Integrate seamlessly with the tools your team already uses
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                      {integrations.map((integration, index) => (
+                        <div
+                          key={index}
+                          className="flex items-center gap-2 p-3 rounded-md border border-border/50 bg-card/50 hover:bg-accent/50 transition-colors">
+                          <div className="text-primary">{integration.icon}</div>
+                          <span className="text-sm font-medium">
+                            {integration.name}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="mt-6 text-center">
+                      <Button variant="outline" className="group">
+                        View all integrations
+                        <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+
+              <TabsContent value="testimonials" className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {testimonials.map((testimonial, index) => (
+                    <Card
+                      key={index}
+                      className="border-border/50 bg-card/30 backdrop-blur-sm hover:bg-card/50 transition-all duration-300">
+                      <CardHeader>
+                        <div className="flex items-center gap-2">
+                          <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-semibold">
+                            {testimonial.avatar}
+                          </div>
+                          <div>
+                            <CardTitle className="text-sm">
+                              {testimonial.name}
+                            </CardTitle>
+                            <CardDescription className="text-xs">
+                              {testimonial.role}
+                            </CardDescription>
+                          </div>
+                        </div>
+                        <div className="flex">
+                          {[...Array(testimonial.rating)].map((_, i) => (
+                            <Star
+                              key={i}
+                              className="h-3 w-3 fill-yellow-400 text-yellow-400"
+                            />
+                          ))}
+                        </div>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-sm text-muted-foreground italic">
+                          &quot;{testimonial.content}&quot;
+                        </p>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </TabsContent>
+            </Tabs>
+          </div>
+
+          {/* CTA Section */}
+          <div className="mt-16 p-8 rounded-2xl bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20 backdrop-blur-sm">
+            <div className="text-center max-w-2xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4">
+                Ready to transform your development workflow?
+              </h2>
+              <p className="text-muted-foreground mb-6">
+                Join thousands of developers who are already building better
+                products with Koda.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button className="group">
+                  Start free trial
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+                <Button variant="outline" className="group">
+                  Schedule a demo
+                  <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </div>
+            </div>
+          </div>
         </div>
       </Container>
-
-      <BackgroundBeams />
     </div>
   );
 }

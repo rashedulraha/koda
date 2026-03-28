@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
-
 import AskAnythingBar from "./Components/AskAnythingBar/AskAnythingBar";
 import Container from "@/components/Responsive/Container";
 import ProjectOverview from "./Components/ProjectOverview/ProjectOverview";
@@ -10,62 +9,79 @@ const Product_direction = () => {
     <>
       {/* Hero Section */}
       <Container>
-        <div className="space-y-3 ">
-          <div className="flex items-center hover:translate-x-1 transition-all duration-500 cursor-pointer">
-            <p className="text-sm font-semibold">
+        <div className="hero-content space-y-4 md:space-y-5">
+          {/* Project Badge */}
+          <div className="project-badge group flex items-center cursor-pointer transition-all duration-300 hover:translate-x-1">
+            <p className="text-sm font-semibold bg-linear-to-r from-primary to-primary/70 bg-clip-text text-transparent">
               Project and long-term planning
             </p>
-            <ChevronRight size={17} />
+            <ChevronRight
+              size={17}
+              className="ml-1 text-primary transition-transform duration-300 group-hover:translate-x-0.5"
+            />
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+          <h1 className="heading-gradient text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight tracking-tight">
             Set the product direction
           </h1>
 
           {/* Description */}
-          <p className="max-w-md font-semibold text-muted-foreground">
-            <span className="text-bold text-card-foreground">
+          <p className="description max-w-xl text-muted-foreground text-base md:text-lg leading-relaxed">
+            <span className="font-semibold text-foreground">
               Align your team around a unified product timeline.
             </span>{" "}
-            Plan, manage, and track all product initiatives with Linear’s visual
-            planning tools.
+            Plan, manage, and track all product initiatives with Linear&apos;s
+            visual planning tools.
           </p>
 
           {/* CTA Button */}
-          <Button variant="outline" className="w-full sm:w-fit">
-            learn more <ChevronRight size={19} className="ml-1" />
+          <Button
+            variant="outline"
+            className="cta-button group w-full sm:w-auto px-6 py-5 text-base font-medium transition-all duration-300 hover:shadow-lg hover:scale-105">
+            Learn more
+            <ChevronRight
+              size={19}
+              className="ml-2 transition-transform duration-300 group-hover:translate-x-1"
+            />
           </Button>
         </div>
       </Container>
 
       {/* Two-Column Section */}
-      <div className="max-w-250 mx-auto flex flex-col md:flex-row my-12  divide-y md:divide-y-0 md:divide-x divide-border overflow-hidden">
-        {/* Left Column */}
-        <div className="flex-1 p-6 lg:p-10">
-          <h2 className="font-semibold text-xl md:text-2xl mb-3">
-            Self-driving product operations
-          </h2>
-          <p className="text-sm md:text-base text-muted-foreground mb-6">
-            Streamline your product development workflows with AI assistance for
-            routine, manual tasks.
-          </p>
-          {/* Card Component */}
-          <ProjectOverview />
-        </div>
+      <div className="two-column-section max-w-7xl mx-auto my-16 md:my-20 lg:my-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border rounded-xl overflow-hidden border border-border/50 bg-background shadow-sm">
+          {/* Left Column */}
+          <div className="col-left p-6 md:p-8 lg:p-10 space-y-4">
+            <div className="space-y-2">
+              <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight">
+                Self-driving product operations
+              </h2>
+              <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                Streamline your product development workflows with AI assistance
+                for routine, manual tasks.
+              </p>
+            </div>
+            <div className="mt-4">
+              <ProjectOverview />
+            </div>
+          </div>
 
-        {/* Right Column */}
-
-        <div className="flex-1 py-4 md:p-6 lg:p-10">
-          <Container>
-            <h2 className="font-semibold text-xl md:text-2xl mb-3">Koda MCP</h2>
-            <p className="text-sm md:text-base text-muted-foreground mb-6">
-              Connect Linear to your favorite tools including Cursor, Claude,
-              ChatGPT, and more.
-            </p>
-            {/* Koda Component */}
-            <AskAnythingBar />
-          </Container>
+          {/* Right Column */}
+          <div className="col-right p-6 md:p-8 lg:p-10 space-y-4">
+            <div className="space-y-2">
+              <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight">
+                Koda MCP
+              </h2>
+              <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                Connect Linear to your favorite tools including Cursor, Claude,
+                ChatGPT, and more.
+              </p>
+            </div>
+            <div className="mt-4">
+              <AskAnythingBar />
+            </div>
+          </div>
         </div>
       </div>
     </>

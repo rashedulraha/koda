@@ -18,23 +18,25 @@ const Contact = () => {
             onboarding support, or product questions.
           </p>
         </div>
-        <div className="flex items-center flex-col md:flex-row w-full gap-5 md:gap-8 my-5 md:my-10 lg:my-14 ">
-          <div className="flex-1 w-full">
+
+        <div className="flex flex-col md:flex-row items-stretch w-full gap-5 md:gap-8 my-5 md:my-10 lg:my-14">
+          <div className="flex-1 w-full ">
             <CardComponent
               data={{
                 title: "Sales",
                 subTitle:
-                  "Speak to our sales team about plans, pricing, enterprise contracts, or request a demo.",
+                  "Talk to our sales team about pricing, plans, or request a demo.",
                 button: "Talk to sales",
               }}
             />
           </div>
-          <div className="flex-1 w-full">
+
+          <div className="flex-1 w-full ">
             <CardComponent
               data={{
                 title: "Help and support",
                 subTitle:
-                  "Ask product questions, report problems, or leave feedback.",
+                  "Ask product questions, report issues, or share your feedback.",
                 button: "Contact support",
               }}
             />

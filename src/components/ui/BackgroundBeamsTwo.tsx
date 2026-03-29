@@ -23,7 +23,6 @@ interface MousePosition {
 export const BackgroundBeamsTwo = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const mouseRef = useRef<MousePosition>({ x: 0, y: 0 });
-  // --- সমস্যাটি এখানে ছিল, এটি সংশোধন করা হয়েছে ---
   const animationRef = useRef<number | undefined>(undefined);
   // ----------------------------------------------------
   const particlesRef = useRef<Particle[]>([]);

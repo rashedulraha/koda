@@ -38,6 +38,7 @@ import feature from "../Data/features";
 import testimonial from "../Data/testimonials";
 import integration from "../Data/integrations";
 import companies from "../Data/companie";
+import { BackgroundBeamsTwo } from "@/components/ui/BackgroundBeamsTwo";
 
 export function BackgroundBeamsDemo() {
   const [activeTab, setActiveTab] = useState("features");
@@ -55,6 +56,7 @@ export function BackgroundBeamsDemo() {
   return (
     <div className="relative flex flex-col overflow-hidden bg-background text-foreground min-h-screen">
       <BackgroundBeams />
+      <BackgroundBeamsTwo />
 
       <Container className="relative z-10 grow">
         <div className="flex flex-col items-center justify-center min-h-screen py-5 md:my-10">

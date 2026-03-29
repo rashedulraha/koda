@@ -1,3 +1,4 @@
+// BackgroundBeamsTwo.tsx
 "use client";
 
 import { useEffect, useRef } from "react";
@@ -9,123 +10,245 @@ interface Particle {
   vy: number;
   radius: number;
   color: string;
+  connections: number[];
   pulsePhase: number;
   pulseSpeed: number;
 }
 
+interface MousePosition {
+  x: number;
+  y: number;
+}
+
 export const BackgroundBeamsTwo = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const mouseRef = useRef({ x: 0, y: 0 });
+  const mouseRef = useRef<MousePosition>({ x: 0, y: 0 });
+  // --- সমস্যাটি এখানে ছিল, এটি সংশোধন করা হয়েছে ---
+  const animationRef = useRef<number | undefined>(undefined);
+  // ----------------------------------------------------
   const particlesRef = useRef<Particle[]>([]);
-  const animationRef = useRef<number>(0);
+  const timeRef = useRef(0);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     const resizeCanvas = () => {
-      const dpr = window.devicePixelRatio || 1;
-      canvas.width = window.innerWidth * dpr;
-      canvas.height = window.innerHeight * dpr;
-      ctx.scale(dpr, dpr);
-      canvas.style.width = `${window.innerWidth}px`;
-      canvas.style.height = `${window.innerHeight}px`;
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
       initParticles();
     };
 
     const initParticles = () => {
-      const count = Math.min(60, Math.floor(window.innerWidth / 20));
-      particlesRef.current = Array.from({ length: count }, () => ({
-        x: Math.random() * window.innerWidth,
-        y: Math.random() * window.innerHeight,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        radius: Math.random() * 1.5 + 0.5,
-        color: `hsla(${220 + Math.random() * 40}, 70%, 70%, `,
-        pulsePhase: Math.random() * Math.PI * 2,
-        pulseSpeed: 0.02 + Math.random() * 0.03,
-      }));
+      const particleCount = Math.min(
+        80,
+        Math.floor((window.innerWidth * window.innerHeight) / 15000),
+      );
+      particlesRef.current = [];
+
+      for (let i = 0; i < particleCount; i++) {
+        const hue = (i / particleCount) * 60 + 200; // Blue to purple range
+        particlesRef.current.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          vx: (Math.random() - 0.5) * 0.5,
+          vy: (Math.random() - 0.5) * 0.5,
+          radius: Math.random() * 2 + 1,
+          color: `hsl(${hue}, 70%, 60%)`,
+          connections: [],
+          pulsePhase: Math.random() * Math.PI * 2,
+          pulseSpeed: Math.random() * 0.02 + 0.01,
+        });
+      }
     };
 
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = canvas.getBoundingClientRect();
+      mouseRef.current = {
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top,
+      };
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      if (e.touches.length > 0) {
+        const rect = canvas.getBoundingClientRect();
+        mouseRef.current = {
+          x: e.touches[0].clientX - rect.left,
+          y: e.touches[0].clientY - rect.top,
+        };
+      }
+    };
+
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+    canvas.addEventListener("mousemove", handleMouseMove);
+    canvas.addEventListener("touchmove", handleTouchMove);
+
     const animate = () => {
-      ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Draw Grid (Linear Style)
-      ctx.strokeStyle = "rgba(255, 255, 255, 0.03)";
-      ctx.lineWidth = 1;
-      const gridSize = 50;
-      for (let i = 0; i < window.innerWidth; i += gridSize) {
-        ctx.beginPath();
-        ctx.moveTo(i, 0);
-        ctx.lineTo(i, window.innerHeight);
-        ctx.stroke();
-      }
-      for (let i = 0; i < window.innerHeight; i += gridSize) {
-        ctx.beginPath();
-        ctx.moveTo(0, i);
-        ctx.lineTo(window.innerWidth, i);
-        ctx.stroke();
-      }
+      timeRef.current += 0.01;
 
-      particlesRef.current.forEach((p, i) => {
-        p.x += p.vx;
-        p.y += p.vy;
-        p.pulsePhase += p.pulseSpeed;
+      // Update and draw particles
+      particlesRef.current.forEach((particle, i) => {
+        // Update position
+        particle.x += particle.vx;
+        particle.y += particle.vy;
 
-        if (p.x < 0 || p.x > window.innerWidth) p.vx *= -1;
-        if (p.y < 0 || p.y > window.innerHeight) p.vy *= -1;
+        // Bounce off walls
+        if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
+        if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
 
-        // Interaction with mouse
-        const dx = mouseRef.current.x - p.x;
-        const dy = mouseRef.current.y - p.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        const opacity = Math.max(0, 1 - dist / 200);
+        // Keep particles in bounds
+        particle.x = Math.max(0, Math.min(canvas.width, particle.x));
+        particle.y = Math.max(0, Math.min(canvas.height, particle.y));
+
+        // Mouse interaction
+        const dx = mouseRef.current.x - particle.x;
+        const dy = mouseRef.current.y - particle.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < 150) {
+          const force = (150 - distance) / 150;
+          particle.vx -= (dx / distance) * force * 0.02;
+          particle.vy -= (dy / distance) * force * 0.02;
+        }
+
+        // Apply damping
+        particle.vx *= 0.99;
+        particle.vy *= 0.99;
+
+        // Update pulse
+        particle.pulsePhase += particle.pulseSpeed;
 
         // Draw connections
-        particlesRef.current.slice(i + 1).forEach((p2) => {
-          const d2 = Math.sqrt((p.x - p2.x) ** 2 + (p.y - p2.y) ** 2);
-          if (d2 < 150) {
-            ctx.strokeStyle = `rgba(100, 150, 255, ${(1 - d2 / 150) * 0.15})`;
+        particle.connections = [];
+        for (let j = i + 1; j < particlesRef.current.length; j++) {
+          const other = particlesRef.current[j];
+          const dx = other.x - particle.x;
+          const dy = other.y - particle.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < 120) {
+            particle.connections.push(j);
+
+            // Draw connection line
+            const opacity = (1 - distance / 120) * 0.5;
+            const gradient = ctx.createLinearGradient(
+              particle.x,
+              particle.y,
+              other.x,
+              other.y,
+            );
+            gradient.addColorStop(
+              0,
+              particle.color
+                .replace("60%", "50%")
+                .replace(")", `, ${opacity})`),
+            );
+            gradient.addColorStop(
+              1,
+              other.color.replace("60%", "50%").replace(")", `, ${opacity})`),
+            );
+
+            ctx.strokeStyle = gradient;
+            ctx.lineWidth = 0.5;
             ctx.beginPath();
-            ctx.moveTo(p.x, p.y);
-            ctx.lineTo(p2.x, p2.y);
+            ctx.moveTo(particle.x, particle.y);
+
+            // Create curved connection
+            const cpx =
+              (particle.x + other.x) / 2 + Math.sin(timeRef.current + i) * 10;
+            const cpy =
+              (particle.y + other.y) / 2 + Math.cos(timeRef.current + i) * 10;
+            ctx.quadraticCurveTo(cpx, cpy, other.x, other.y);
+
             ctx.stroke();
           }
-        });
+        }
 
-        // Draw particle
-        const pulse = Math.sin(p.pulsePhase) * 0.5 + 1;
-        ctx.fillStyle = p.color + (0.2 + opacity * 0.5) + ")";
+        // Draw particle with glow effect
+        const pulseSize = Math.sin(particle.pulsePhase) * 0.5 + 1;
+        const currentRadius = particle.radius * pulseSize;
+
+        // Outer glow
+        const glowGradient = ctx.createRadialGradient(
+          particle.x,
+          particle.y,
+          0,
+          particle.x,
+          particle.y,
+          currentRadius * 4,
+        );
+        glowGradient.addColorStop(
+          0,
+          particle.color.replace("60%", "70%").replace(")", ", 0.3)"),
+        );
+        glowGradient.addColorStop(
+          1,
+          particle.color.replace("60%", "70%").replace(")", ", 0)"),
+        );
+
+        ctx.fillStyle = glowGradient;
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius * pulse, 0, Math.PI * 2);
+        ctx.arc(particle.x, particle.y, currentRadius * 4, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Inner particle
+        ctx.fillStyle = particle.color;
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, currentRadius, 0, Math.PI * 2);
         ctx.fill();
       });
+
+      // Draw flowing beams
+      const beamCount = 3;
+      for (let i = 0; i < beamCount; i++) {
+        const progress = (timeRef.current * 0.1 + i / beamCount) % 1;
+        const x = progress * canvas.width;
+        const y =
+          canvas.height / 2 + Math.sin(progress * Math.PI * 2 + i) * 100;
+
+        const gradient = ctx.createLinearGradient(x - 100, y, x + 100, y);
+        gradient.addColorStop(0, "rgba(100, 200, 255, 0)");
+        gradient.addColorStop(
+          0.5,
+          `rgba(100, 200, 255, ${0.1 * Math.sin(timeRef.current + i) * 0.5 + 0.05})`,
+        );
+        gradient.addColorStop(1, "rgba(100, 200, 255, 0)");
+
+        ctx.fillStyle = gradient;
+        ctx.fillRect(x - 100, y - 2, 200, 4);
+      }
 
       animationRef.current = requestAnimationFrame(animate);
     };
 
-    const handleMouseMove = (e: MouseEvent) => {
-      mouseRef.current = { x: e.clientX, y: e.clientY };
-    };
-
-    window.addEventListener("resize", resizeCanvas);
-    window.addEventListener("mousemove", handleMouseMove);
-    resizeCanvas();
     animate();
 
     return () => {
       window.removeEventListener("resize", resizeCanvas);
-      window.removeEventListener("mousemove", handleMouseMove);
-      cancelAnimationFrame(animationRef.current);
+      canvas.removeEventListener("mousemove", handleMouseMove);
+      canvas.removeEventListener("touchmove", handleTouchMove);
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
     };
   }, []);
 
   return (
-    <div className="pointer-events-none fixed inset-0 -z-10 bg-[#030303]">
-      <canvas ref={canvasRef} className="opacity-60" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(17,24,39,0),#030303)]" />
+    <div className="absolute inset-0 z-0 overflow-hidden">
+      <canvas
+        ref={canvasRef}
+        className="absolute inset-0 h-full w-full"
+        style={{ opacity: 0.8 }}
+      />
+      <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-background opacity-50" />
     </div>
   );
 };

@@ -13,7 +13,6 @@ const HomePage = () => {
       <div>
         <div>
           <BackgroundBeamsDemo />
-
           <Container>
             <WorldMapDemo />
             <Second />

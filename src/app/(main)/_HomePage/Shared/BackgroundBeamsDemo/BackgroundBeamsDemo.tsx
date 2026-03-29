@@ -39,6 +39,7 @@ import testimonial from "../Data/testimonials";
 import integration from "../Data/integrations";
 import companies from "../Data/companie";
 import { BackgroundBeamsTwo } from "@/components/ui/BackgroundBeamsTwo";
+import Image from "next/image";
 
 export function BackgroundBeamsDemo() {
   const [activeTab, setActiveTab] = useState("features");
@@ -244,8 +245,13 @@ export function BackgroundBeamsDemo() {
                       className="border-border/50 bg-card/30 backdrop-blur-sm hover:bg-card/50 transition-all duration-300">
                       <CardHeader>
                         <div className="flex items-center gap-2">
-                          <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-semibold">
-                            {testimonial.avatar}
+                          <div className="relative w-10 h-10 rounded-full overflow-hidden">
+                            <Image
+                              src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=870&auto=format&fit=crop"
+                              alt="person"
+                              fill
+                              className="object-cover"
+                            />
                           </div>
                           <div>
                             <CardTitle className="text-sm">

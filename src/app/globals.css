@@ -100,6 +100,11 @@
   --sidebar-accent-foreground: var(--muted-foreground);
   --sidebar-border: var(--border);
   --sidebar-ring: var(--ring);
+
+  /* Background Animation Variables for LIGHT MODE */
+  --particle-trail-color: oklch(1 0 0 / 0.05);
+  --beam-color: oklch(87.137% 0.0438 220.685);
+  --particle-lightness: 40%;
 }
 
 .dark {
@@ -155,6 +160,11 @@
   --sidebar-accent-foreground: var(--muted-foreground);
   --sidebar-border: var(--border);
   --sidebar-ring: var(--ring);
+
+  /* Background Animation Variables for DARK MODE */
+  --particle-trail-color: oklch(0 0 0 / 0.05);
+  --beam-color: oklch(0.2875 0.065 280.28);
+  --particle-lightness: 65%;
 }
 
 @layer base {

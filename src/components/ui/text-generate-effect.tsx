@@ -43,7 +43,7 @@ export const TextGenerateEffect = ({
         {wordsArray.map((word, idx) => (
           <motion.span
             key={idx}
-            className="inline-block opacity-0 text-foreground"
+            className="inline-block opacity-0 text-foreground/80"
             style={{
               transform: "translateY(20px)",
               filter: filter ? "blur(8px)" : "none",

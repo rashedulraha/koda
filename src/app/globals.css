@@ -105,6 +105,8 @@
   --particle-trail-color: oklch(1 0 0 / 0.05);
   --beam-color: oklch(87.137% 0.0438 220.685);
   --particle-lightness: 40%;
+  /* Add this line with your other animation variables */
+  --grid-line-color: oklch(0.85 0 0); /* A very faint gray for light mode */
 }
 
 .dark {
@@ -165,6 +167,9 @@
   --particle-trail-color: oklch(0 0 0 / 0.05);
   --beam-color: oklch(0.2875 0.065 280.28);
   --particle-lightness: 65%;
+
+  /* Add this line with your other animation variables */
+  --grid-line-color: oklch(0.25 0 0);
 }
 
 @layer base {

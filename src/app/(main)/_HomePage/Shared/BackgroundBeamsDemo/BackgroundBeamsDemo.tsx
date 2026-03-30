@@ -1,4 +1,3 @@
-// BackgroundBeamsDemo.tsx
 "use client";
 
 import { useState } from "react";
@@ -38,8 +37,12 @@ import feature from "../Data/features";
 import testimonial from "../Data/testimonials";
 import integration from "../Data/integrations";
 import companies from "../Data/companie";
-import { BackgroundBeamsTwo } from "@/components/ui/BackgroundBeamsTwo";
+
 import Image from "next/image";
+// import { BackgroundBeamsTwo } from "@/components/ui/BackgroundBeamsTwo";
+
+import { cn } from "@/lib/utils";
+import { CanvasText } from "@/components/ui/canvas-text";
 
 export function BackgroundBeamsDemo() {
   const [activeTab, setActiveTab] = useState("features");
@@ -57,7 +60,7 @@ export function BackgroundBeamsDemo() {
   return (
     <div className="relative flex flex-col overflow-hidden bg-background text-foreground min-h-screen">
       <BackgroundBeams />
-      <BackgroundBeamsTwo />
+      {/* <BackgroundBeamsTwo /> */}
 
       <Container className="relative z-10 grow">
         <div className="flex flex-col items-center justify-center min-h-screen py-5 md:my-10">
@@ -127,8 +130,31 @@ export function BackgroundBeamsDemo() {
           {/* Social Proof Section */}
           <div className="mt-16 w-full max-w-4xl">
             <div className="text-center mb-8">
-              <h2 className="text-2xl font-semibold mb-2">
-                Join developers from leading companies
+              <h2
+                className={cn(
+                  "group relative mx-auto mt-4 max-w-2xl text-2xl font-semibold mb-2 leading-tight tracking-tight text-center",
+                )}>
+                Join developers from{" "}
+                <span className="inline-block align-middle">
+                  <CanvasText
+                    text="leading companies"
+                    backgroundClassName="bg-blue-600 dark:bg-blue-700"
+                    colors={[
+                      "rgba(0, 153, 255, 1)",
+                      "rgba(0, 153, 255, 0.9)",
+                      "rgba(0, 153, 255, 0.8)",
+                      "rgba(0, 153, 255, 0.7)",
+                      "rgba(0, 153, 255, 0.6)",
+                      "rgba(0, 153, 255, 0.5)",
+                      "rgba(0, 153, 255, 0.4)",
+                      "rgba(0, 153, 255, 0.3)",
+                      "rgba(0, 153, 255, 0.2)",
+                      "rgba(0, 153, 255, 0.1)",
+                    ]}
+                    lineGap={4}
+                    animationDuration={20}
+                  />
+                </span>
               </h2>
               <p className="text-muted-foreground">
                 Building the future of software development

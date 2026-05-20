@@ -3,7 +3,8 @@
 import { Button } from "../ui/button";
 import { ModeToggle } from "../ui/ModeToggle";
 import { useState, useEffect } from "react";
-import { Menu, X, Cpu, Send } from "lucide-react";
+import { Menu, X, Send } from "lucide-react";
+import { SiCodeproject } from "react-icons/si";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -75,7 +76,7 @@ const Navbar = () => {
               whileHover={{ rotate: 360 }}
               transition={{ duration: 0.5, type: "spring" }}
               className="p-2 rounded-xl bg-foreground/5 group-hover:bg-foreground/10 transition-colors">
-              <Cpu className="h-4 w-4 sm:h-5 sm:w-5 text-foreground" />
+              <SiCodeproject className="h-4 w-4 sm:h-5 sm:w-5 text-foreground" />
             </motion.div>
             <h2 className="text-lg sm:text-xl lg:text-2xl font-black tracking-tighter text-foreground">
               Koda
@@ -95,16 +96,13 @@ const Navbar = () => {
             <Button
               onClick={handleOpenGithub}
               variant="ghost"
-              className="hidden sm:flex rounded-full px-3 lg:px-4 h-9 lg:h-10 gap-2 text-sm font-medium hover:bg-foreground/5 hover:text-foreground transition-all duration-300">
+              className="hidden sm:flex rounded-full px-3 lg:px-4 h-9 lg:h-10 gap-2 text-sm font-medium hover:bg-foreground/5 hover:text-foreground transition-all duration-300 border">
               <GrGithub className="h-4 w-4" />
               <span>1.4k</span>
             </Button>
 
             {/* Desktop Signup Button */}
-            <Button
-              asChild
-              size="sm"
-              className="hidden md:flex rounded-full px-5 lg:px-6 h-9 lg:h-10 cursor-pointer bg-foreground text-background hover:bg-foreground/90 transition-all duration-300 gap-2 text-sm font-medium group">
+            <Button asChild size="sm" className="rounded-full">
               <Link href="/signup">
                 Signup
                 <Send className="h-3.5 w-3.5 group-hover:translate-x-0.5 transition-transform" />

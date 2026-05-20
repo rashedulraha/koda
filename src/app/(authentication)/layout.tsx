@@ -32,7 +32,7 @@ export default function AuthLayout({
       </main>
 
       <footer className="text-center text-sm text-gray-500 p-4">
-        © 2026 Koda App
+        © 2026 Koda App || Rashedul Raha
       </footer>
     </div>
   );

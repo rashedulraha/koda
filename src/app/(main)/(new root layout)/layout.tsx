@@ -4,6 +4,7 @@ import Container from "@/components/Responsive/Container";
 import { Button } from "@/components/ui/button";
 import { ButtonGroup } from "@/components/ui/button-group";
 import { Field, FieldLabel } from "@/components/ui/field";
+import { GooeyInput } from "@/components/ui/gooey-input";
 import { Input } from "@/components/ui/input";
 import { Wifi } from "lucide-react";
 import Link from "next/link";
@@ -48,33 +49,26 @@ const NavMenu = ({ currentPath }: { currentPath: string }) => {
 /**
  * SearchBar Component: Encapsulates the search input and buttons.
  */
-const SearchBar = () => {
-  return (
-    <div className="w-full md:w-auto shrink-0">
-      <Field>
-        <FieldLabel htmlFor="search-input" className="text-sm">
-          Search
-        </FieldLabel>
-        <ButtonGroup>
-          <Input
-            id="search-input"
-            placeholder="Type to search..."
-            className="w-full md:w-64" // Set a specific width on larger screens
-          />
-          <Button variant="outline">Search</Button>
-          <Button
-            variant="default"
-            size="icon"
-            className="cursor-pointer border hidden sm:flex rounded-full"
-            aria-label="Connect" // Added for accessibility
-          >
-            <Wifi className="h-4 w-4" />
-          </Button>
-        </ButtonGroup>
-      </Field>
-    </div>
-  );
-};
+// const SearchBar = () => {
+//   return (
+//     <div className="w-full md:w-auto shrink-0">
+//       <Field>
+//         <FieldLabel htmlFor="search-input" className="text-sm">
+//           Search
+//         </FieldLabel>
+//         <ButtonGroup>
+//           <Input
+//             id="search-input"
+//             placeholder="Type to search..."
+//             className="w-full md:w-64" // Set a specific width on larger screens
+//           />
+//           <Button variant="outline">Search</Button>
+//
+//         </ButtonGroup>
+//       </Field>
+//     </div>
+//   );
+// };
 
 // --- Main Layout Component ---
 
@@ -92,7 +86,18 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <section className="mt-5 md:mt-8 lg:mt-10">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5">
           <NavMenu currentPath={pathname} />
-          <SearchBar />
+          {/* <SearchBar /> */}
+          <div className="flex items-center gap-3">
+            <GooeyInput placeholder="Search..." />
+            <Button
+              variant="default"
+              size="icon"
+              className="cursor-pointer border hidden sm:flex rounded-full"
+              aria-label="Connect" // Added for accessibility
+            >
+              <Wifi className="h-4 w-4" />
+            </Button>
+          </div>
         </div>
       </section>
 

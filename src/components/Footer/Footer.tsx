@@ -2,9 +2,9 @@ import Container from "../Responsive/Container";
 
 const Footer = () => {
   return (
-    <div className="border-t border-muted p-10">
+    <div className="border-t border-muted">
       <Container>
-        <div className="grid grid-cols-3 lg:grid-cols-6 gap-5">
+        <div className="grid grid-cols-3 lg:grid-cols-6 gap-5 pb-5 md:pb-10">
           <div>
             <h2 className="text-lg font-bold">Koda</h2>
           </div>
@@ -76,6 +76,9 @@ const Footer = () => {
           </div>
         </div>
       </Container>
+      <footer className="text-center text-sm text-gray-500 w-full border-t p-4">
+        © 2026 Koda App || Rashedul Raha
+      </footer>
     </div>
   );
 };

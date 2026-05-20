@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+
 import { NewArticleTypes } from "../../_types/newLayoutTypes";
 
 const NewArticle = ({ data }: { data: NewArticleTypes }) => {

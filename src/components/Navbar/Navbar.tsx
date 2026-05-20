@@ -20,6 +20,7 @@ const desktopMobileMenuLink = (
     <MenuLink data={{ to: "/customer", label: "Customers" }} />
     <MenuLink data={{ to: "/new", label: "New" }} />
     <MenuLink data={{ to: "/contact", label: "Contact" }} />
+    <MenuLink data={{ to: "/dashboard", label: "Dashboard" }} />
   </div>
 );
 
